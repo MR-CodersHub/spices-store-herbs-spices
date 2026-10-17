@@ -76,28 +76,32 @@
       name: 'Ravi Menon',
       role: 'Master Miller · Third generation',
       text: 'Runs the stones, keeps the batch log, and is the reason the temperatures quoted on this site are recorded rather than estimated.',
-      tags: ['Stone milling', 'Quality control']
+      tags: ['Stone milling', 'Quality control'],
+      img: '../assets/men3.jpg'
     },
     {
       initials: 'LA',
       name: 'Lakshmi Amritha',
       role: 'Sourcing Director',
       text: 'Holds the direct contracts with 2,400 farming families and visits every cluster between harvest and signature.',
-      tags: ['Grower contracts', 'Sourcing']
+      tags: ['Grower contracts', 'Sourcing'],
+      img: '../assets/woman2.jpg'
     },
     {
       initials: 'NV',
       name: 'Chef Nikhil Varma',
       role: 'Culinary Director',
       text: 'Twenty-two years in Kerala and Chettinad kitchens. Develops the blends and argues with us about the heat levels.',
-      tags: ['Blend development', 'Recipes']
+      tags: ['Blend development', 'Recipes'],
+      img: '../assets/chef-nikhil.jpg'
     },
     {
       initials: 'MI',
       name: 'Dr Meenakshi Iyer',
       role: 'Food Scientist',
       text: 'Runs the in-house lab work and explains what the numbers mean when a customer asks whether a claim is true.',
-      tags: ['Lab testing', 'Volatile oils']
+      tags: ['Lab testing', 'Volatile oils'],
+      img: '../assets/woman1.jpg'
     }
   ];
 
@@ -127,8 +131,12 @@
   function renderTeam() {
     var K = window.PageKit;
     K.fill('team-grid', TEAM.map(function (person) {
+      var photoHtml = person.img
+        ? '<div class="team-avatar-wrap"><img src="' + person.img + '" alt="' + K.esc(person.name) + '" class="team-avatar-img" width="92" height="92" loading="lazy"></div>'
+        : '<span class="avatar lg">' + K.esc(person.initials) + '</span>';
+
       return '<div class="team-card reveal">' +
-        '<span class="avatar lg">' + K.esc(person.initials) + '</span>' +
+        photoHtml +
         '<h3>' + K.esc(person.name) + '</h3>' +
         '<div class="team-role">' + K.esc(person.role) + '</div>' +
         '<p>' + K.esc(person.text) + '</p>' +
@@ -137,6 +145,64 @@
         }).join('') + '</div>' +
       '</div>';
     }).join(''));
+  }
+
+  function setupOriginsCarousel() {
+    var track = document.getElementById('origins-track');
+    var prevBtn = document.getElementById('origins-prev-btn');
+    var nextBtn = document.getElementById('origins-next-btn');
+    var dots = document.querySelectorAll('#origins-dots .dot');
+    if (!track || !prevBtn || !nextBtn) return;
+
+    function getStep() {
+      var firstCard = track.querySelector('.origin-card');
+      return firstCard ? (firstCard.offsetWidth + 16) : 280;
+    }
+
+    function updateNavState() {
+      var maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+      var sl = track.scrollLeft;
+
+      prevBtn.disabled = sl <= 4;
+      nextBtn.disabled = sl >= maxScroll - 4;
+
+      if (dots.length > 0) {
+        var step = getStep();
+        var activeIndex = Math.min(dots.length - 1, Math.max(0, Math.round(sl / step)));
+        dots.forEach(function (dot, idx) {
+          dot.classList.toggle('active', idx === activeIndex);
+        });
+      }
+    }
+
+    prevBtn.addEventListener('click', function () {
+      track.scrollBy({ left: -getStep(), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', function () {
+      track.scrollBy({ left: getStep(), behavior: 'smooth' });
+    });
+
+    track.addEventListener('scroll', updateNavState, { passive: true });
+    window.addEventListener('resize', updateNavState, { passive: true });
+
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        track.scrollBy({ left: -getStep(), behavior: 'smooth' });
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        track.scrollBy({ left: getStep(), behavior: 'smooth' });
+      }
+    });
+
+    dots.forEach(function (dot, idx) {
+      dot.addEventListener('click', function () {
+        track.scrollTo({ left: idx * getStep(), behavior: 'smooth' });
+      });
+    });
+
+    updateNavState();
   }
 
   function renderImages() {
@@ -165,6 +231,7 @@
     renderValues();
     renderTeam();
     renderImages();
+    setupOriginsCarousel();
     if (window.UI) window.UI.refresh();
   }
 

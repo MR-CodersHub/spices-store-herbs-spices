@@ -15,32 +15,16 @@
 
   var LINKS = [
     { key: 'home',      label: 'Home',      href: BASE + 'index.html' },
-    { key: 'home-2',     label: 'Home 2',     href: BASE + 'pages/home-2.html' },
+    { key: 'home-2',    label: 'Home 2',    href: BASE + 'pages/home-2.html' },
     { key: 'about',     label: 'About',     href: BASE + 'pages/about.html' },
     { key: 'services',  label: 'Services',  href: BASE + 'pages/services.html' },
     { key: 'blog',      label: 'Journal',   href: BASE + 'pages/blog.html' },
     { key: 'pricing',   label: 'Pricing',   href: BASE + 'pages/pricing.html' },
-    { key: 'contact',   label: 'Contact',   href: BASE + 'pages/contact.html' },
-    { key: 'login',     label: 'Login',     href: BASE + 'auth/login.html', isCta: true }
+    { key: 'contact',   label: 'Contact',   href: BASE + 'pages/contact.html' }
   ];
 
   /* Secondary destinations shown inside the mobile drawer */
-  var SECONDARY = [
-
-  ];
-
-  var SEAL_SVG =
-    '<svg class="seal-art" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
-      '<circle cx="32" cy="32" r="30" stroke="#082052" stroke-width="1.8" stroke-dasharray="3 2"/>' +
-      '<circle cx="32" cy="32" r="26" stroke="#C9A45C" stroke-width="1.2"/>' +
-      '<path d="M20 34C20 41 25.3726 46 32 46C38.6274 46 44 41 44 34H20Z" fill="#082052"/>' +
-      '<path d="M18 33H46V36H18V33Z" fill="#C9A45C"/>' +
-      '<path d="M26 46H38V49H26V46Z" fill="#082052"/>' +
-      '<path d="M26 18L37 34H41L30 18H26Z" fill="#C9A45C"/>' +
-      '<circle cx="32" cy="22" r="1.5" fill="#B52B1E"/>' +
-      '<circle cx="21" cy="26" r="1.5" fill="#E89D1C"/>' +
-      '<circle cx="43" cy="26" r="1.5" fill="#3E6347"/>' +
-    '</svg>';
+  var SECONDARY = [];
 
   var ICON_SUN =
     '<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">' +
@@ -52,21 +36,29 @@
       '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>' +
     '</svg>';
   var ICON_LTR =
-    '<svg class="icon-ltr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-      '<path d="M4 7h9M4 12h13M4 17h7"></path><path d="M17 5l3 3-3 3"></path>' +
+    '<svg class="icon-ltr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path d="M10 5h4a4 4 0 0 1 0 8h-4"></path>' +
+      '<path d="M10 5v14"></path>' +
+      '<path d="M6 5v14"></path>' +
+      '<path d="M18 19l3-3-3-3"></path>' +
+      '<path d="M21 16h-7"></path>' +
     '</svg>';
   var ICON_RTL =
-    '<svg class="icon-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-      '<path d="M20 7h-9M20 12H7M20 17h-7"></path><path d="M7 5L4 8l3 3"></path>' +
+    '<svg class="icon-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path d="M14 5h-4a4 4 0 0 0 0 8h4"></path>' +
+      '<path d="M14 5v14"></path>' +
+      '<path d="M18 5v14"></path>' +
+      '<path d="M6 19l-3-3 3-3"></path>' +
+      '<path d="M3 16h7"></path>' +
     '</svg>';
 
   function toolsMarkup() {
     return (
       '<div class="nav-tools">' +
-        '<button type="button" class="tool-btn" data-tool="theme" aria-pressed="false" aria-label="Switch appearance">' +
+        '<button type="button" class="tool-btn" data-tool="theme" aria-pressed="false" aria-label="Switch appearance" title="Toggle dark / light appearance">' +
           ICON_SUN + ICON_MOON +
         '</button>' +
-        '<button type="button" class="tool-btn" data-tool="dir" aria-pressed="false" aria-label="Switch text direction">' +
+        '<button type="button" class="tool-btn" data-tool="dir" aria-pressed="false" aria-label="Switch text direction" title="Switch text direction (LTR / RTL)">' +
           ICON_LTR + ICON_RTL +
         '</button>' +
       '</div>'
@@ -75,14 +67,6 @@
 
   function navItem(item) {
     var active = PAGE === item.key || (item.key === 'home' && PAGE === 'home-2');
-    if (item.isCta) {
-      return (
-        '<li class="nav-cta-item">' +
-          '<a href="' + item.href + '" class="nav-btn-login' + (active ? ' active' : '') + '"' +
-          (active ? ' aria-current="page"' : '') + '>' + item.label + '</a>' +
-        '</li>'
-      );
-    }
     return (
       '<li><a href="' + item.href + '" class="nav-link' + (active ? ' active' : '') + '"' +
       (active ? ' aria-current="page"' : '') + '>' + item.label + '</a></li>'
@@ -98,13 +82,11 @@
     );
   }
 
-  function ctaMarkup() {
-    /* On the landing page the CTA opens the bespoke-blend dialog; on every
-       other page it routes to the contact form pre-filled for blends. */
+  function desktopCtaMarkup() {
     if (document.getElementById('custom-blend-modal')) {
-      return '<a href="#custom-blends" class="btn btn-primary open-custom-blend-btn">Request a Custom Blend</a>';
+      return '<a href="#custom-blends" class="nav-cta-btn open-custom-blend-btn">Request a Blend</a>';
     }
-    return '<a href="' + BASE + 'pages/contact.html?topic=custom-blend" class="btn btn-primary">Request a Custom Blend</a>';
+    return '<a href="' + BASE + 'pages/contact.html?topic=custom-blend" class="nav-cta-btn">Request a Blend</a>';
   }
 
   function mobileCtaMarkup() {
@@ -114,7 +96,47 @@
     return '<a href="' + BASE + 'pages/contact.html?topic=custom-blend" class="btn btn-primary" style="width:100%;text-align:center;">Request a Custom Blend</a>';
   }
 
+  function injectNavbarStyles() {
+    if (document.getElementById('amritha-navbar-core-css')) return;
+    var style = document.createElement('style');
+    style.id = 'amritha-navbar-core-css';
+    style.textContent = [
+      '.sticky-header { position: sticky; top: 0; left: 0; right: 0; z-index: 1000; background-color: var(--color-warm-bg, #F8F0E5); border-bottom: 1px solid var(--color-gold-border, rgba(201, 164, 92, 0.35)); transition: background-color 0.3s ease, box-shadow 0.3s ease; }',
+      '.sticky-header.scrolled { background-color: rgba(248, 240, 229, 0.98); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(36, 28, 22, 0.10); }',
+      '[data-theme="dark"] .sticky-header { background-color: var(--color-primary-dark, #051433); border-bottom-color: rgba(201, 164, 92, 0.25); }',
+      '[data-theme="dark"] .sticky-header.scrolled { background-color: rgba(5, 20, 51, 0.98); }',
+      '.navbar { display: flex !important; align-items: center !important; justify-content: space-between !important; height: 80px; position: relative; width: 100%; gap: clamp(16px, 2vw, 32px); }',
+      '.nav-brand { display: inline-flex !important; align-items: center !important; gap: 12px !important; text-decoration: none !important; flex-shrink: 0 !important; cursor: pointer; }',
+      '.nav-brand-logo { width: 46px; height: 46px; border-radius: 50%; object-fit: contain; background-color: var(--color-primary, #082052); border: 1.5px solid var(--color-soft-gold, #C9A45C); box-shadow: 0 3px 10px rgba(8, 32, 82, 0.22); flex-shrink: 0; display: block; }',
+      '.nav-brand-copy { display: flex !important; flex-direction: column !important; line-height: 1.15; }',
+      '.nav-brand-title { font-family: var(--font-serif, "Playfair Display", Georgia, serif); font-size: 1.18rem; font-weight: 700; color: var(--color-primary, #082052); letter-spacing: 0.01em; white-space: nowrap; }',
+      '[data-theme="dark"] .nav-brand-title { color: var(--color-primary-text, #F8F0E5); }',
+      '.nav-brand-tagline { font-size: 0.62rem; letter-spacing: 0.13em; color: var(--color-soft-gold, #C9A45C); font-weight: 700; text-transform: uppercase; margin-top: 2px; white-space: nowrap; }',
+      '.nav-menu { display: flex !important; align-items: center !important; justify-content: center !important; gap: clamp(8px, 1.4vw, 20px) !important; list-style: none !important; margin: 0 !important; padding: 0 !important; flex: 1 1 auto; }',
+      '.nav-link { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-dark-text, #241C16); position: relative; padding: 8px 0; white-space: nowrap; text-decoration: none; transition: color 0.2s ease; }',
+      '[data-theme="dark"] .nav-link { color: rgba(248, 240, 229, 0.88); }',
+      '.nav-link:hover, .nav-link.active { color: var(--color-soft-gold, #C9A45C) !important; }',
+      '.nav-link::after { content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--color-soft-gold, #C9A45C); transition: width 0.25s ease; }',
+      '.nav-link:hover::after, .nav-link.active::after { width: 100%; }',
+      '.nav-actions { display: flex !important; align-items: center !important; gap: 10px !important; flex-shrink: 0 !important; position: static !important; transform: none !important; }',
+      '.nav-tools { display: flex !important; align-items: center !important; gap: 8px !important; }',
+      '.tool-btn { width: 40px !important; height: 40px !important; border-radius: 8px !important; border: 1px solid var(--color-gold-border, rgba(201, 164, 92, 0.35)) !important; background: var(--color-warm-surface, #FFF9F0) !important; color: var(--color-primary, #082052) !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; transition: all 0.2s ease; flex-shrink: 0; cursor: pointer; padding: 0 !important; }',
+      '[data-theme="dark"] .tool-btn { background: rgba(255, 255, 255, 0.08) !important; border-color: rgba(201, 164, 92, 0.35) !important; color: var(--color-primary-text, #F8F0E5) !important; }',
+      '.tool-btn:hover { background: var(--color-soft-gold, #C9A45C) !important; color: #fff !important; border-color: var(--color-soft-gold, #C9A45C) !important; transform: translateY(-1px); }',
+      '.tool-btn svg { width: 19px; height: 19px; }',
+      '.nav-cta-btn { height: 40px !important; padding: 0 18px !important; border-radius: 8px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; font-size: 0.8rem !important; font-weight: 700 !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; background-color: var(--color-primary, #082052) !important; color: var(--color-primary-text, #F8F0E5) !important; border: 1px solid var(--color-primary, #082052) !important; text-decoration: none !important; white-space: nowrap !important; box-shadow: 0 3px 10px rgba(8, 32, 82, 0.16); transition: all 0.2s ease; }',
+      '[data-theme="dark"] .nav-cta-btn { background-color: var(--color-soft-gold, #C9A45C) !important; color: var(--color-primary-dark, #051433) !important; border-color: var(--color-soft-gold, #C9A45C) !important; }',
+      '.nav-cta-btn:hover { background-color: var(--color-primary-light, #0f3073) !important; color: #fff !important; transform: translateY(-1px); }',
+      '[data-theme="dark"] .nav-cta-btn:hover { background-color: #d8b26a !important; }',
+      '.mobile-toggle { display: none !important; background: none; color: var(--color-primary, #082052); font-size: 26px; cursor: pointer; padding: 6px; line-height: 1; border: none; }',
+      '[data-theme="dark"] .mobile-toggle { color: var(--color-primary-text, #F8F0E5); }',
+      '@media (max-width: 1024px) { .nav-menu { display: none !important; } .nav-cta-btn { display: none !important; } .mobile-toggle { display: inline-flex !important; align-items: center; justify-content: center; } }'
+    ].join('\n');
+    document.head.appendChild(style);
+  }
+
   function render() {
+    injectNavbarStyles();
     var mount = document.getElementById('site-navbar');
     if (!mount) {
       mount = document.createElement('div');
@@ -122,30 +144,25 @@
       document.body.insertBefore(mount, document.body.firstChild);
     }
 
-    var leftLinks = LINKS.slice(0, 4).map(navItem).join('');
-    var rightLinks = LINKS.slice(4, 8).map(navItem).join('');
+    var navLinks = LINKS.map(navItem).join('');
 
     mount.innerHTML =
-
       '<header class="sticky-header" id="header">' +
         '<div class="container">' +
           '<nav class="navbar" aria-label="Main Navigation">' +
-            '<ul class="nav-menu nav-menu-left">' + leftLinks + '</ul>' +
+            '<a href="' + BASE + 'index.html" class="nav-brand" aria-label="Amritha Spice Mill — home">' +
+              '<img src="' + BASE + 'assets/logo.png" alt="Amritha Spice Mill" class="nav-brand-logo" width="46" height="46">' +
+              '<div class="nav-brand-copy">' +
+                '<span class="nav-brand-title">Amritha Spice Mill</span>' +
+                '<span class="nav-brand-tagline">Traditional Craft &bull; Estd 1948</span>' +
+              '</div>' +
+            '</a>' +
 
-            '<div class="brand-seal-wrapper">' +
-              '<a href="' + BASE + 'index.html" class="brand-seal" aria-label="Amritha Spice Mill — home">' +
-                '<img src="' + BASE + 'assets/logo.png" alt="Amritha Spice Mill — ESTD 1948" class="brand-seal-logo" width="96" height="96">' +
-              '</a>' +
-              '<a href="' + BASE + 'index.html" class="nav-brand-text" aria-hidden="true">' +
-                '<span class="nav-brand-name">Amritha Spice Mill</span>' +
-                '<span class="nav-brand-sub">Traditional Craft &bull; Estd 1948</span>' +
-              '</a>' +
-            '</div>' +
-
-            '<ul class="nav-menu nav-menu-right">' + rightLinks + '</ul>' +
+            '<ul class="nav-menu">' + navLinks + '</ul>' +
 
             '<div class="nav-actions">' +
               toolsMarkup() +
+              desktopCtaMarkup() +
               '<button type="button" class="mobile-toggle" id="mobile-toggle-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">&#9776;</button>' +
             '</div>' +
           '</nav>' +

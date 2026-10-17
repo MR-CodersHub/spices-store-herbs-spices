@@ -18,8 +18,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="../src/js/tailwind-config.js"></script>
 
-  <link rel="stylesheet" href="../src/css/style.css">
-  <link rel="stylesheet" href="../src/css/pages.css">
+  <link rel="stylesheet" href="../src/css/style.css?v=2.0">
+  <link rel="stylesheet" href="../src/css/pages.css?v=2.0">
 </head>
 <body data-base="../" data-page="about">
 
@@ -181,34 +181,115 @@
     </section>
 
     <!-- 7. ORIGINS -->
-    <section class="page-section-sm section-alt" aria-labelledby="origins-heading">
+    <section class="page-section-sm section-alt" id="origins-section" aria-labelledby="origins-heading">
       <div class="container">
-        <div class="split reverse">
+        <div class="split reverse" style="align-items:center;">
           <div class="split-media tall">
             <img id="origins-image" src="" alt="" loading="lazy">
           </div>
           <div class="split-body">
-            <span class="eyebrow">WHERE THE SPICE COMES FROM</span>
-            <h2 id="origins-heading">Five Growing Regions, One Set of Buyers</h2>
-            <p>We buy direct from 2,400 farming families across five regions. Not through aggregators, not through agents who cannot tell you which field a sack came out of. Our field team visits every cluster between harvest and contract, and the growers have our direct number.</p>
-            <div class="table-wrap" style="margin-top:26px;">
-              <table class="data-table">
-                <caption>Our principal sourcing regions and what we take from each.</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Region</th>
-                    <th scope="col">What we buy</th>
-                    <th scope="col">Harvest</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><th scope="row"><strong>Salem, Tamil Nadu</strong></th><td>Turmeric, curry leaf, coriander</td><td>Jan &ndash; Mar</td></tr>
-                  <tr><th scope="row"><strong>Guntur, Andhra Pradesh</strong></th><td>Chilli (Guntur Sannam), turmeric</td><td>Nov &ndash; Feb</td></tr>
-                  <tr><th scope="row"><strong>Ramganj Mandi, Rajasthan</strong></th><td>Coriander, cumin, fenugreek</td><td>Nov &ndash; Dec</td></tr>
-                  <tr><th scope="row"><strong>Unjha, Gujarat</strong></th><td>Cumin, fennel, ajwain</td><td>Dec &ndash; Jan</td></tr>
-                  <tr><th scope="row"><strong>Idukki, Kerala</strong></th><td>Pepper, cardamom, clove, nutmeg</td><td>Sep &ndash; Jan</td></tr>
-                </tbody>
-              </table>
+            <div class="origins-header-row">
+              <div>
+                <span class="eyebrow">WHERE THE SPICE COMES FROM</span>
+                <h2 id="origins-heading" style="margin-bottom:0;">Five Growing Regions, One Set of Buyers</h2>
+              </div>
+              <!-- Carousel Controls: Prev and Next buttons -->
+              <div class="origins-carousel-controls" aria-label="Sourcing regions navigation">
+                <button type="button" class="origins-nav-btn prev-btn" id="origins-prev-btn" aria-label="Previous sourcing region" title="Previous region" disabled>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button type="button" class="origins-nav-btn next-btn" id="origins-next-btn" aria-label="Next sourcing region" title="Next region">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <p style="margin-top:14px;">We buy direct from 2,400 farming families across five regions. Not through aggregators, not through agents who cannot tell you which field a sack came out of. Our field team visits every cluster between harvest and contract, and the growers have our direct number.</p>
+
+            <!-- Origins Horizontal Carousel Track without visible scrollbar -->
+            <div class="origins-carousel-wrap" style="margin-top:24px;">
+              <div class="origins-carousel-track" id="origins-track" tabindex="0" role="region" aria-label="Five Sourcing Regions Carousel">
+                
+                <div class="origin-card">
+                  <div class="origin-card-header">
+                    <span class="origin-tag">Region 01</span>
+                    <span class="origin-harvest">Jan &ndash; Mar</span>
+                  </div>
+                  <h3 class="origin-name">Salem, Tamil Nadu</h3>
+                  <div class="origin-spices">
+                    <strong>Spices:</strong> Turmeric, curry leaf, coriander
+                  </div>
+                  <div class="origin-detail">
+                    <span>480 Farming families</span> &bull; <span>Salem Erode belt</span>
+                  </div>
+                </div>
+
+                <div class="origin-card">
+                  <div class="origin-card-header">
+                    <span class="origin-tag">Region 02</span>
+                    <span class="origin-harvest">Nov &ndash; Feb</span>
+                  </div>
+                  <h3 class="origin-name">Guntur, Andhra Pradesh</h3>
+                  <div class="origin-spices">
+                    <strong>Spices:</strong> Chilli (Guntur Sannam), turmeric
+                  </div>
+                  <div class="origin-detail">
+                    <span>620 Farming families</span> &bull; <span>High-heat pods</span>
+                  </div>
+                </div>
+
+                <div class="origin-card">
+                  <div class="origin-card-header">
+                    <span class="origin-tag">Region 03</span>
+                    <span class="origin-harvest">Nov &ndash; Dec</span>
+                  </div>
+                  <h3 class="origin-name">Ramganj Mandi, Rajasthan</h3>
+                  <div class="origin-spices">
+                    <strong>Spices:</strong> Coriander, cumin, fenugreek
+                  </div>
+                  <div class="origin-detail">
+                    <span>390 Farming families</span> &bull; <span>High volatile oil</span>
+                  </div>
+                </div>
+
+                <div class="origin-card">
+                  <div class="origin-card-header">
+                    <span class="origin-tag">Region 04</span>
+                    <span class="origin-harvest">Dec &ndash; Jan</span>
+                  </div>
+                  <h3 class="origin-name">Unjha, Gujarat</h3>
+                  <div class="origin-spices">
+                    <strong>Spices:</strong> Cumin, fennel, ajwain
+                  </div>
+                  <div class="origin-detail">
+                    <span>410 Farming families</span> &bull; <span>Clean stone-screened</span>
+                  </div>
+                </div>
+
+                <div class="origin-card">
+                  <div class="origin-card-header">
+                    <span class="origin-tag">Region 05</span>
+                    <span class="origin-harvest">Sep &ndash; Jan</span>
+                  </div>
+                  <h3 class="origin-name">Idukki, Kerala</h3>
+                  <div class="origin-spices">
+                    <strong>Spices:</strong> Pepper, cardamom, clove, nutmeg
+                  </div>
+                  <div class="origin-detail">
+                    <span>500 Farming families</span> &bull; <span>Highland shade-grown</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Indicator pagination dots -->
+              <div class="origins-dots" id="origins-dots" aria-hidden="true">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
             </div>
           </div>
         </div>
@@ -235,12 +316,12 @@
   <script src="../src/js/data/icons.js"></script>
 
   <script src="../src/js/toast.js"></script>
-  <script src="../src/js/navbar.js"></script>
+  <script src="../src/js/navbar.js?v=2.0"></script>
   <script src="../src/js/footer.js"></script>
   <script src="../src/js/ui.js"></script>
   <script src="../src/js/form-validation.js"></script>
   <script src="../src/js/pages/kit.js"></script>
-  <script src="../src/js/pages/about.js"></script>
+  <script src="../src/js/pages/about.js?v=2.0"></script>
 
 </body>
 </html>
