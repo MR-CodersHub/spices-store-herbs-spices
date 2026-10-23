@@ -69,7 +69,7 @@ body {
   overflow-x: hidden;
   background-image: radial-gradient(rgba(201, 164, 92, 0.04) 1px, transparent 1px);
   background-size: 32px 32px;
-  padding-top: var(--nav-height);
+  padding-top: 0;
 }
 
 img {
@@ -220,17 +220,22 @@ h1, h2, h3, h4, .serif-font {
 }
 
 /* Ghost / Outline on Navy */
-.btn-outline-light {
-  background-color: transparent;
-  color: var(--color-primary-text);
-  border: 1px solid rgba(248, 240, 229, 0.4);
+.btn-outline-light,
+.btn-outline-light:visited {
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
 }
 
-.btn-outline-light:hover {
+.btn-outline-light:hover,
+.btn-outline-light:focus {
   border-color: var(--color-soft-gold);
-  color: var(--color-soft-gold);
-  background-color: rgba(201, 164, 92, 0.08);
+  color: #051433 !important;
+  background-color: var(--color-soft-gold);
   transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(201, 164, 92, 0.35);
 }
 
 /* Outline on Ivory */
@@ -281,7 +286,7 @@ h1, h2, h3, h4, .serif-font {
 }
 
 .sticky-header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -520,15 +525,16 @@ h1, h2, h3, h4, .serif-font {
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
-  background-color: var(--color-primary-dark);
-  background-image: linear-gradient(135deg, rgba(5, 20, 51, 0.90) 0%, rgba(8, 32, 82, 0.84) 50%, rgba(5, 20, 51, 0.92) 100%),
+  background-color: #051433;
+  background-image: linear-gradient(180deg, rgba(4, 12, 28, 0.88) 0%, rgba(5, 18, 44, 0.92) 50%, rgba(4, 12, 28, 0.95) 100%),
+                    radial-gradient(ellipse at center, rgba(8, 32, 82, 0.82) 0%, rgba(4, 12, 28, 0.96) 100%),
                     url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1920&q=80');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  color: var(--color-primary-text);
+  color: #F8F0E5;
   overflow: hidden;
-  padding: 60px 0 70px;
+  padding: 56px 0 64px;
   border-bottom: 4px solid var(--color-soft-gold);
 }
 
@@ -575,12 +581,14 @@ h1, h2, h3, h4, .serif-font {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(5, 20, 51, 0.95), transparent);
+  background: linear-gradient(to top, rgba(4, 12, 28, 0.95) 0%, rgba(4, 12, 28, 0.72) 65%, transparent 100%);
   padding: 16px;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  color: var(--color-soft-gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: #FFE6A3;
   text-transform: uppercase;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Center Hero Typography */
@@ -592,31 +600,33 @@ h1, h2, h3, h4, .serif-font {
 }
 
 .hero-eyebrow {
-  color: var(--color-soft-gold);
+  color: #E5B869;
   font-size: 0.92rem;
   letter-spacing: 0.24em;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 8px;
   display: block;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-heading {
   font-size: 3.4rem;
   font-weight: 600;
-  color: var(--color-primary-text);
+  color: #FFFFFF;
   line-height: 1.15;
   margin-bottom: 18px;
   letter-spacing: -0.01em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65), 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .hero-subtext {
   font-size: 1.12rem;
-  color: rgba(248, 240, 229, 0.88);
-  max-width: 520px;
+  color: #F8F0E5;
+  max-width: 530px;
   margin: 0 auto 28px;
-  line-height: 1.6;
+  line-height: 1.65;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-cta-group {
@@ -660,28 +670,32 @@ h1, h2, h3, h4, .serif-font {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(5, 20, 51, 0.95), transparent);
+  background: linear-gradient(to top, rgba(4, 12, 28, 0.95) 0%, rgba(4, 12, 28, 0.72) 65%, transparent 100%);
   padding: 16px;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  color: var(--color-soft-gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: #FFE6A3;
   text-transform: uppercase;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Micro Trust Band under Hero */
 .hero-trust-bar {
   margin-top: 48px;
   padding-top: 24px;
-  border-top: 1px solid rgba(201, 164, 92, 0.2);
+  border-top: 1px solid rgba(201, 164, 92, 0.28);
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
-  color: rgba(248, 240, 229, 0.75);
-  font-size: 0.82rem;
+  color: #F8F0E5;
+  font-size: 0.84rem;
   letter-spacing: 0.12em;
+  font-weight: 600;
   text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .hero-trust-item {
@@ -691,9 +705,10 @@ h1, h2, h3, h4, .serif-font {
 }
 
 .hero-trust-item svg {
-  color: var(--color-soft-gold);
-  width: 18px;
-  height: 18px;
+  color: #E5B869;
+  width: 19px;
+  height: 19px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
 }
 
 /* --------------------------------------------------------------------------

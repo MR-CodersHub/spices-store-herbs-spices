@@ -199,12 +199,26 @@
 
 [data-theme="dark"] .brand-title,
 [data-theme="dark"] .brand-sub,
+[data-theme="dark"] .nav-brand-title,
 [data-theme="dark"] .nav-brand-name {
-  color: #E7D9BE;
+  color: #F8F0E5;
 }
 
-[data-theme="dark"] .nav-brand-sub {
+[data-theme="dark"] .nav-brand-sub,
+[data-theme="dark"] .nav-brand-tagline {
   color: var(--color-soft-gold);
+}
+
+[data-theme="dark"] .btn-outline-light,
+[data-theme="dark"] .btn-outline-light:visited {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+[data-theme="dark"] .btn-outline-light:hover {
+  background-color: var(--color-soft-gold) !important;
+  border-color: var(--color-soft-gold) !important;
+  color: #051433 !important;
 }
 
 /* btn-outline-dark on cream/light surfaces — keep navy in dark mode */
