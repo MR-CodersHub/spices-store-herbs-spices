@@ -101,7 +101,7 @@
     var style = document.createElement('style');
     style.id = 'amritha-navbar-core-css';
     style.textContent = [
-      '.sticky-header { position: sticky; top: 0; left: 0; right: 0; z-index: 1000; background-color: var(--color-warm-bg, #F8F0E5); border-bottom: 1px solid var(--color-gold-border, rgba(201, 164, 92, 0.35)); transition: background-color 0.3s ease, box-shadow 0.3s ease; }',
+      '.sticky-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background-color: var(--color-warm-bg, #F8F0E5); border-bottom: 1px solid var(--color-gold-border, rgba(201, 164, 92, 0.35)); transition: background-color 0.3s ease, box-shadow 0.3s ease; }',
       '.sticky-header.scrolled { background-color: rgba(248, 240, 229, 0.98); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(36, 28, 22, 0.10); }',
       '[data-theme="dark"] .sticky-header { background-color: var(--color-primary-dark, #051433); border-bottom-color: rgba(201, 164, 92, 0.25); }',
       '[data-theme="dark"] .sticky-header.scrolled { background-color: rgba(5, 20, 51, 0.98); }',
@@ -130,7 +130,7 @@
       '[data-theme="dark"] .nav-cta-btn:hover { background-color: #d8b26a !important; }',
       '.mobile-toggle { display: none !important; background: none; color: var(--color-primary, #082052); font-size: 26px; cursor: pointer; padding: 6px; line-height: 1; border: none; }',
       '[data-theme="dark"] .mobile-toggle { color: #F8F0E5 !important; }',
-      '@media (max-width: 1024px) { .nav-menu { display: none !important; } .nav-cta-btn { display: none !important; } .mobile-toggle { display: inline-flex !important; align-items: center; justify-content: center; } }'
+      '@media (max-width: 1024px) { .nav-menu { display: none !important; } .nav-cta-btn { display: none !important; } .navbar .nav-tools { display: none !important; } .mobile-toggle { display: inline-flex !important; align-items: center; justify-content: center; } }'
     ].join('\n');
     document.head.appendChild(style);
   }
