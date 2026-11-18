@@ -1688,7 +1688,7 @@ a.tag:hover, button.tag:hover { color: var(--color-primary); border-color: var(-
    11. CTA / NEWSLETTER / FOOTER EXTRAS
    -------------------------------------------------------------------------- */
 .cta-strip {
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 70%, #0d2d70 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 70%, var(--color-primary-light) 100%);
   color: var(--color-primary-text);
   padding: 76px 0;
   text-align: center;

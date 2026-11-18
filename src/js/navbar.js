@@ -11,10 +11,10 @@
 
   var LINKS = [
     { key: 'home',      label: 'Home',      href: BASE + 'index.html' },
+    { key: 'home2',   label: 'Home 2',      href: BASE + 'pages/home-2.html' },
     { key: 'products',  label: 'Products',  href: BASE + 'pages/services.html' },
     { key: 'recipes',   label: 'Recipes',   href: BASE + 'pages/blog.html' },
     { key: 'about',     label: 'Our Story', href: BASE + 'pages/about.html' },
-    { key: 'pricing',   label: 'Pricing',   href: BASE + 'pages/pricing.html' },
     { key: 'contact',   label: 'Contact',   href: BASE + 'pages/contact.html' }
   ];
 
@@ -62,7 +62,8 @@
 
   function navItem(item) {
     var active = PAGE === item.key ||
-      (item.key === 'home' && PAGE === 'home-2') ||
+      (item.key === 'home' && PAGE === 'home') ||
+      (item.key === "home2" && PAGE === 'home-2') ||
       (item.key === 'products' && (PAGE === 'services' || PAGE === 'service-details' || PAGE === 'products')) ||
       (item.key === 'recipes' && (PAGE === 'blog' || PAGE === 'blog-details' || PAGE === 'recipes'));
     return (
