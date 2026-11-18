@@ -71,7 +71,7 @@ body {
   overflow-x: hidden;
   background-image: radial-gradient(rgba(227, 135, 65, 0.04) 1px, transparent 1px);
   background-size: 32px 32px;
-  padding-top: 0;
+  padding-top: var(--nav-height); /* offset for fixed navbar */
 }
 
 img {
@@ -288,7 +288,7 @@ h1, h2, h3, h4, .serif-font {
 }
 
 .sticky-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -296,14 +296,15 @@ h1, h2, h3, h4, .serif-font {
   background-color: var(--color-warm-bg);
   border-bottom: 1px solid rgba(227, 135, 65, 0.28);
   box-shadow: 0 4px 20px rgba(36, 28, 22, 0.04);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-bottom-color 0.3s ease;
 }
 
 .sticky-header.scrolled {
-  background-color: rgba(248, 240, 229, 0.97);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 6px 24px rgba(36, 28, 22, 0.10);
+  background-color: rgba(250, 243, 234, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 6px 28px rgba(44, 21, 13, 0.13);
+  border-bottom-color: rgba(227, 135, 65, 0.45);
 }
 
 .navbar {
@@ -1144,7 +1145,7 @@ h1, h2, h3, h4, .serif-font {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: var(--color-primary);
+  background: var(--color-primary) !important;
   color: var(--color-primary-text);
   padding: 12px 18px;
   border-radius: 4px;
@@ -1555,7 +1556,7 @@ h1, h2, h3, h4, .serif-font {
    10. CUSTOM BLENDS FEATURE BANNER
    -------------------------------------------------------------------------- */
 .custom-blend-banner {
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 60%, #0d2d70 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 60%, var(--color-primary-light) 100%);
   color: var(--color-primary-text);
   padding: 88px 0;
   position: relative;
@@ -2273,6 +2274,10 @@ h1, h2, h3, h4, .serif-font {
   .navbar {
     height: 72px;
     padding: 6px 0;
+  }
+
+  body {
+    padding-top: 72px; /* adjusted for shorter navbar on tablet */
   }
 
   .nav-brand-logo {

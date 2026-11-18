@@ -489,7 +489,7 @@ body[data-page="blog"] .page-hero {
 }
 
 body[data-page="contact"] .page-hero {
-  background-image: url('https://images.unsplash.com/photo-1608686207856-001b95cf60ca?auto=format&fit=crop&w=1920&q=80');
+  background-image: url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1000&q=80');
 }
 
 body[data-page="faq"] .page-hero {
@@ -667,7 +667,7 @@ body[data-page="blog-details"] .page-hero {
   letter-spacing: 0.16em;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
-.section-navy h2, .section-navy h3 {
+.section-navy h2 {
   color: var(--color-primary-text) !important;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
@@ -926,7 +926,7 @@ body[data-page="blog-details"] .page-hero {
   background: var(--color-warm-bg); color: var(--color-primary);
   border: 1px solid var(--color-gold-border);
 }
-.pill.gold { background: var(--color-primary); color: var(--color-soft-gold); border-color: var(--color-primary); }
+.pill.gold {  color: var(--color-soft-gold); border-color: var(--color-soft-gold); }
 .pill.solid { background: var(--color-soft-gold); color: var(--color-primary-dark); border-color: var(--color-soft-gold); }
 
 /* Where the Spice Comes From - Carousel & Navigation Controls */
@@ -1051,9 +1051,9 @@ body[data-page="blog-details"] .page-hero {
   margin-bottom: 8px;
   line-height: 1.25;
 }
-[data-theme="dark"] .origin-name {
+/* [data-theme="dark"] .origin-name {
   color: var(--color-primary-text);
-}
+} */
 .origin-spices {
   font-size: 0.92rem;
   color: var(--color-dark-text);

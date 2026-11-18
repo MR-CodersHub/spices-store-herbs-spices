@@ -12,9 +12,9 @@
   var LINKS = [
     { key: 'home',      label: 'Home',      href: BASE + 'index.html' },
     { key: 'home2',   label: 'Home 2',      href: BASE + 'pages/home-2.html' },
-    { key: 'products',  label: 'Products',  href: BASE + 'pages/services.html' },
-    { key: 'recipes',   label: 'Recipes',   href: BASE + 'pages/blog.html' },
-    { key: 'about',     label: 'Our Story', href: BASE + 'pages/about.html' },
+    { key: 'about',     label: 'About', href: BASE + 'pages/about.html' },
+    { key: 'products',  label: 'Services',  href: BASE + 'pages/services.html' },
+    { key: 'recipes',   label: 'Blog',   href: BASE + 'pages/blog.html' },
     { key: 'contact',   label: 'Contact',   href: BASE + 'pages/contact.html' }
   ];
 

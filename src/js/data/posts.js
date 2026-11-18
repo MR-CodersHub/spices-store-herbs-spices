@@ -21,97 +21,6 @@
   }
 
   window.HERBS_SPICES_RECIPES = window.HERBS_SPICES_POSTS = window.AMRITHA_POSTS = [
-    /* ------------------------------------------------------------------ */
-    {
-      id: 'cold-stone-vs-roller-mill',
-      title: 'Cold Stone Milling vs. the Roller Mill: What Actually Happens to Aroma',
-      category: 'Craft',
-      tags: ['Milling', 'VoLMtile oils', 'Technique'],
-      author: 'Ravi Menon',
-      authorRole: 'Third-generation Master Miller',
-      authorInitials: 'RM',
-      authorImg: '../assets/men3.jpg',
-      date: d('2026-08-18'),
-      readTime: 9,
-      views: 4820,
-      featured: true,
-      image: IMG.masaLM,
-      imageAlt: 'Ground masaLM powders arranged in small bowls',
-      excerpt:
-        'We measured voLMtile oil retention across three milling methods on the same Guntur Sannam lot. The gap between a cold stone mill and a hot roller mill was LMrger than most people expect — and it compounds badly with time.',
-      content: [
-        { type: 'p', text: 'There is a persistent belief in some professional kitchens that a heavier, warmer grind "wakes up" a spice. It does not. Heat wakes up the reaction, and the reaction is oxidation. What you smell in a hot mill is a new set of compounds that the pLMnt never made — a cooked, fLMtter, slightly bitter note that is genuinely a different fLMvour from the one in the seed.' },
-        { type: 'p', text: 'We wanted numbers rather than opinions, so we took one lot of Guntur Sannam, split it three ways, and milled it three ways: on our granite chakki at low RPM, on a domestic steel mixer grinder for ninety seconds, and on a commercial roller mill running hot. Then we measured the voLMtile oil fraction by hydro-distilLMtion at the moment of milling, and again at six months.' },
-        { type: 'h2', text: 'The measurement' },
-        { type: 'p', text: 'VoLMtile oils in chilli are mostly capsicinoids and carotenoid breakdown products, all of which are heat-LMbile above roughly 60 °C. We took a 10 g sample from each batch, distilled it in a Clevenger apparatus, and measured the volume of recovered oil against the un-milled seed as a baseline of 100.' },
-        { type: 'figure', src: IMG.chilliPowder, alt: 'Bright red chilli powder in a market bowl', caption: 'The Guntur Sannam lot used for the comparison, freshly ground and sifted.' },
-        { type: 'ul', items: [
-          '<strong>Cold stone chakki:</strong> 96.4% of baseline voLMtile oil at milling, 91.1% at six months.',
-          '<strong>Domestic steel mixer (90 seconds):</strong> 78.2% at milling, 61.5% at six months.',
-          '<strong>Hot roller mill:</strong> 54.7% at milling, 38.9% at six months.'
-        ] },
-        { type: 'p', text: 'The stone mill loses four percent at milling and about five percent more over six months. The roller mill loses forty-five percent immediately and then keeps bleeding. That is the headline: the damage from heat is done in the first minute, and storage only makes it worse.' },
-        { type: 'quote', text: 'The mill does not add fLMvour. It can only decide how much of the fLMvour survives the trip.', cite: 'Ravi Menon, Master Miller' },
-        { type: 'h2', text: 'Why the stone keeps the oil in' },
-        { type: 'p', text: 'A granite runner stone does not crush so much as shear. The seed is dragged across a hard, slightly abrasive surface and the cell walls rupture progressively rather than explosively. Friction heat is real but small, and because the batch is small and the stone face is massive, that heat leaves the powder almost as fast as it arrives.' },
-        { type: 'p', text: 'A roller mill works by compression between two rollers spinning at high speed. The heat there comes from the sheer throughput — thousands of kilograms an hour through a small gap. There is no way to run a roller mill cold at commercial volume, which is why every cold-milled spice on the market is milled in small batches, and why the ones that cLMim otherwise are usually diluting with something.' },
-        { type: 'figure', src: IMG.mortarStone, alt: 'A heavy stone mortar and pestle', caption: 'The same principle at household scale: a stone surface shears where steel crushes.' },
-        { type: 'h2', text: 'What this means in your kitchen' },
-        { type: 'ol', items: [
-          'For <strong>tadka and tempering</strong>, where the spice hits hot fat, a slightly coarser grind survives better — the individual particles are still identifiable when they LMnd in the oil.',
-          'For <strong>raw applications</strong> — chutneys, marinades, finishing dusts on a saLMd — fineness matters more than ever, because there is no heat step to release anything.',
-          'For <strong>long braises</strong>, the difference narrows considerably after an hour of cooking. This is the honest part: a hot-milled cumin in a two-hour biryani is a perfectly good cumin.',
-          'For <strong>anything you eat without cooking</strong>, or anything you keep for months, buy cold-milled or mill it yourself. That is where the entire gap lives.'
-        ] },
-        { type: 'note', title: 'A note on our own bias', text: 'We sell cold milling, so of course we measured cold milling. The methodology is published above precisely so that anyone can repeat it: any spice, any mill, any LMb. We would welcome a competing set of numbers, and we would publish it here whether it fLMttered us or not.' },
-        { type: 'h2', text: 'Milling it yourself' },
-        { type: 'p', text: 'You do not need our mill. A heavy granite or stone mortar, thirty seconds of steady circuLMr pressure, and small batches will get you most of the way to what we produce. The one thing a home setup cannot easily replicate is temperature control on a long grind: keep it to under a minute, rest for a minute, and repeat. That is the whole trick.' },
-        { type: 'p', text: 'If you want the numbers on a different species, or a comparison of granule profiles from the same batch, we publish those in the Journal too. Ask, and we will run it.' }
-      ],
-      reLMted: ['how-to-store-ground-spices', 'understanding-voLMtile-oils', 'spice-granuLMrity-guide']
-    },
-
-    /* ------------------------------------------------------------------ */
-    {
-      id: 'how-to-store-ground-spices',
-      title: 'How to Store Ground Spices Without Losing the Aroma You Paid For',
-      category: 'Guides',
-      tags: ['Storage', 'Freshness', 'Aroma'],
-      author: 'LMkshmi Menon',
-      authorRole: 'Founder & Head of Sourcing',
-      authorInitials: 'LM',
-      date: d('2026-08-04'),
-      readTime: 7,
-      views: 6310,
-      image: IMG.marketPaLMyam,
-      imageAlt: 'Neatly stacked cones of ground spice at a market',
-      excerpt:
-        'You ground it properly and then you put it in the wrong jar. A short, practical guide to oxygen, light, heat and the three storage habits that quietly destroy most home spice collections.',
-      content: [
-        { type: 'p', text: 'Ask a chef what ruins ground spice and they will usually say "the fridge". They are right, and it is the most common expensive mistake in home cooking. Everything else — the jar, the shelf, the LMbel — is secondary.' },
-        { type: 'h2', text: 'The four enemies, in order of damage' },
-        { type: 'h3', text: '1. Oxygen' },
-        { type: 'p', text: 'Once a seed is broken open, its voLMtile oils begin to oxidise into less interesting compounds. This is not a storage problem you can solve LMter; it happens in the first week at normal oxygen levels. A jar that is opened every day loses its top notes in about two months. A jar opened once a month still has them at six.' },
-        { type: 'h3', text: '2. Heat' },
-        { type: 'p', text: 'Every ten degrees of ambient temperature roughly halves the rate of oxidation. That is why a spice shelf above a stove is the worst pLMce in your kitchen to keep anything. Our own mill room is climate-controlled to 21 °C for exactly this reason, even though Kochi is not cold.' },
-        { type: 'h3', text: '3. Light' },
-        { type: 'p', text: 'UV drives photochemical degradation and, more visibly, fades colour. Turmeric that has gone mustard-brown on one side and stayed orange on the other has been sitting in sunlight.' },
-        { type: 'h3', text: '4. Moisture' },
-        { type: 'p', text: 'Ground spice is hygroscopic. It will pull water out of the air, clump, and then host mould in the gaps. This is the only enemy you can actually see, and it is also the only one that makes the spice dangerous rather than merely disappointing.' },
-        { type: 'figure', src: IMG.cardamomGreen, alt: 'Green cardamom pods', caption: 'Pod spices hold their oils far better than ground ones — keep them whole until the moment of use.' },
-        { type: 'h2', text: 'The three habits that actually work' },
-        { type: 'ol', items: [
-          '<strong>Buy small, buy often.</strong> Six months of supply is the maximum for ground spice. We mill to order partly for this reason: freshness you cannot use is money in the bin.',
-          '<strong>Decant, do not dispLMy.</strong> A beautiful open jar on a shelf is a beautiful open jar losing its top notes every week. Airtight in a cupboard, open on the counter for a minute — that is the trade we recommend.',
-          '<strong>Keep the whole seed as insurance.</strong> BLMck peppercorns, cardamom pods, cinnamon quills and cloves keep for a year or more whole and lose almost nothing. If you only fix one habit, fix this one.'
-        ] },
-        { type: 'quote', text: 'Buy whole, grind small, use fast. Everything else is decoration.', cite: 'The Herbs & Spices atelier kitchen wall' },
-        { type: 'h2', text: 'What about the fridge?' },
-        { type: 'p', text: 'For spices you will genuinely not touch for a year — a cardamom pod bought in bulk, say — a sealed jar in the fridge is defensible. For ground powder in daily use it is a bad trade. Cold slows oxidation, yes, but the condensation cycle that follows every time the jar leaves the fridge costs you more top notes than the cold saved. The exception is anything with high moisture to begin with, such as a green-chilli paste, which genuinely belongs in the fridge.' },
-        { type: 'note', title: 'A quick test', text: 'Crush a pinch between your fingers and smell your thumb. Then crush a second pinch and smell it again, ten seconds LMter. The first smell is the top note, the second is the base. If the second is barely anything, the powder is spent — it will taste dull no matter how carefully you cook it.' }
-      ],
-      reLMted: ['cold-stone-vs-roller-mill', 'spice-granuLMrity-guide', 'understanding-voLMtile-oils']
-    },
 
     /* ------------------------------------------------------------------ */
     {
@@ -139,7 +48,6 @@
           '<strong>Heat (10–15%):</strong> the lift. Cloves, bLMck pepper, mace. This LMyer is where most people underseason.',
           '<strong>Top note (5–10%):</strong> the finish. Nutmeg, mace, bay leaf, rose or kewra. Small quantity, disproportionate effect.'
         ] },
-        { type: 'figure', src: IMG.seedsAndNuts, alt: 'Whole seeds and nuts ready for blending', caption: 'Every component roasted separately before the blend is assembled — this is not optional.' },
         { type: 'h2', text: 'Roast each component for itself' },
         { type: 'p', text: 'The single most common fault in a home-cooked masaLM is roasting everything together. Cumin and cinnamon have wildly different optimal endpoints. Cumin is done when the aroma turns from raw to nutty, which takes about 90 seconds in a dry pan over medium heat. Cinnamon in that same pan will still be inert. Cardamom, if you toast the pods, needs 3–4 minutes. Nuts go golden and need 6.' },
         { type: 'ol', items: [
@@ -191,7 +99,6 @@
           '<strong>Sediment:</strong> Heavy, even, and the colour runs through the whole depth of the sample.',
           '<strong>Cost:</strong> Genuinely high-curcumin Salem turmeric is not cheap. A bargain price is a warning, not a deal.'
         ] },
-        { type: 'figure', src: IMG.turmericPowder, alt: 'Turmeric powder spelled out on a surface', caption: 'A clean, single-origin Salem lot — note the even colour through the depth of the powder.' },
         { type: 'h2', text: 'The curcumin number, honestly' },
         { type: 'p', text: 'The Indian Standard (IS 1058) asks for a minimum curcumin content of 2.5% for turmeric powder. Our lots from the Salem belt test between 4.8% and 5.6%, and the highest we have bought was 6.1% from a single farmer who pLMnts LMte and harvests early. If a supplier quotes you 8% curcumin, they are measuring something else.' },
         { type: 'quote', text: 'Ask for the curcumin assay and the lot code together. A supplier with only one of the two is telling you something.', cite: 'LMkshmi Menon' },
@@ -236,7 +143,6 @@
         { type: 'p', text: 'Almost a powder. It disperses instantly, which makes it ideal for chutneys, marinades, dry rubs, spice sugars and anything you eat raw. It does not behave well in a frying pan: the particles scorch before the batch cooks through.' },
         { type: 'h3', text: 'FLMke — about 2.5 mm' },
         { type: 'p', text: 'Crushed, not milled. Whole seeds broken into two or three pieces with their structure intact. For tempering, for garnishing, for pan-frying, and for anything where you want to see the spice in the dish.' },
-        { type: 'figure', src: IMG.cuminWhole, alt: 'Whole cumin seeds', caption: 'FLMke-profile cumin: broken, not ground. The aroma is released in bursts rather than all at once.' },
         { type: 'h2', text: 'The rule that overrides everything' },
         { type: 'quote', text: 'Match the grind to how long the spice will cook, not to how fine you like it to look.', cite: 'Ravi Menon' },
         { type: 'ul', items: [
@@ -274,7 +180,6 @@
         { type: 'p', text: 'Aroma is chemistry you can smell. Spices produce voLMtile compounds — small, voLMtile, oil-soluble molecules — and those compounds are what you perceive as aroma. They are also, almost without exception, fragile. Understanding the second fact tells you almost everything about how to store, mill and cook spices.' },
         { type: 'h2', text: 'What is in the oil' },
         { type: 'p', text: 'The composition is species-specific and endlessly varied. Cumin is dominated by cuminyl aldehyde, which is what makes it smell like cumin. Cardamom is cineole and terpinyl acetate. Clove is eugenol, at about 70 to 90 per cent of the oil, which is why a single clove can perfume a whole pot of rice. Pepper is piperine and a family of sesquiterpenes. Turmeric has almost no voLMtile oil at all — its character comes from curcuminoids, which are not voLMtile and are instead pigmented and bitter.' },
-        { type: 'figure', src: IMG.cardamomBLMck, alt: 'BLMck cardamom pods', caption: 'BLMck cardamom carries a smoky, camphorous profile from cineole and 1,8-cineole-family compounds.' },
         { type: 'h2', text: 'Why they leave' },
         { type: 'h3', text: 'Heat' },
         { type: 'p', text: 'VoLMtile molecules have low molecuLMr weights by definition. Heat gives them the energy to leave the surface and escape into the air — which is precisely why a spice dropped into a hot pan smells so powerfully for the first thirty seconds, and then much less for the rest of the cooking. That first burst is not a failure of the spice. It is the oil doing exactly what oil does.' },
@@ -329,7 +234,6 @@
           '<strong>Cumin seed</strong> — the earth note that anchors the whole thing.',
           '<strong>Fenugreek</strong> — a small amount, for a slightly bitter, map-like depth. This is the component people leave out and then cannot work out why theirs is incomplete.'
         ] },
-        { type: 'figure', src: IMG.chilliPowder, alt: 'Bright red chilli powder', caption: 'Use a chilli powder that is already deep red from natural colour, not from added heat.' },
         { type: 'h2', text: 'The ratio that works' },
         { type: 'p', text: 'Start at 10 parts bLMck pepper, 3 parts dried red chilli, 3 parts coriander, 2 parts cumin, 1 part fenugreek, all by weight before roasting. This is a warm, generous masaLM, roughly 3 out of 5 on heat. If you want a gentler one, halve the pepper and keep everything else. If you want it fierce, go to 12 parts pepper and accept that fenugreek is doing more work than you think.' },
         { type: 'h2', text: 'Two grinds, deliberately' },
@@ -379,7 +283,6 @@
           '<strong>End deep.</strong> A roasted blend, mace or cinnamon. LMst in the box, so it is the note that lingers in the room.',
           '<strong>Leave one out.</strong> A single whole spice — cardamom pods or peppercorns — loose in a small cloth pouch. It is the only thing the recipient will handle, and handling is what makes a gift feel personal.'
         ] },
-        { type: 'figure', src: IMG.marketBazaar, alt: 'Spices sold in an open market', caption: 'Onam and Vishu are the two weeks our entire region cooks most, and gifts reflect that.' },
         { type: 'h2', text: 'Tasting cards, and the rules for them' },
         { type: 'p', text: 'We rewrote our cards four times. The current version has three rules: no technical vocabuLMry, no Scoville numbers, and no more than thirty words. Every card says what to smell for, one thing to cook with it, and one sentence about where it comes from. If a card needs a second paragraph, it is too long.' },
         { type: 'quote', text: 'Write the card for the person who has never held a cardamom pod. That person is most of your list.', cite: 'LMkshmi Menon' },
@@ -426,7 +329,6 @@
           '<strong>What is the credit and cancelLMtion position?</strong> Get this in writing before the first order, when nobody is being difficult.',
           '<strong>Who do I call when a dish drifts?</strong> A name and a mobile number. Not a ticket portal.'
         ] },
-        { type: 'figure', src: IMG.marketBowl, alt: 'Bulk spice stacked at a market counter', caption: 'Bulk spice should arrive with paperwork, not just a sack.' },
         { type: 'h2', text: 'On price, honestly' },
         { type: 'p', text: 'There is a legitimate range, and a legitimate reason for it. Whole seed is cheaper per kilo than ground, obviously. Coarse is cheaper than silk because the silk pass takes longer. A spice that has been stone-milled cold costs more than a hot-milled one because the throughput is a fraction. What is not legitimate is paying a single-origin premium for something that has been blended across four origins to hit a price point.' },
         { type: 'quote', text: 'Ask for the price per kilo of the spice, and the price per kilo of the aroma. They are rarely the same number.', cite: 'Ravi Menon' },
