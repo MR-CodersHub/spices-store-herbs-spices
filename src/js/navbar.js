@@ -74,7 +74,8 @@
 
   function secondaryItem(item) {
     var active = PAGE === item.key ||
-      (item.key === 'home' && PAGE === 'home-2') ||
+      (item.key === 'home' && PAGE === 'home') ||
+      (item.key === "home2" && PAGE === 'home-2') ||
       (item.key === 'products' && (PAGE === 'services' || PAGE === 'service-details' || PAGE === 'products')) ||
       (item.key === 'recipes' && (PAGE === 'blog' || PAGE === 'blog-details' || PAGE === 'recipes'));
     return (
