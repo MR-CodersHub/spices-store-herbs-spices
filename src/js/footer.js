@@ -14,20 +14,20 @@
 
   var QUICK_LINKS = [
     { key: 'home',     label: 'Home',                href: BASE + 'index.html' },
-    { key: 'home-2',   label: 'Chef Program',        href: BASE + 'pages/home-2.html' },
+    { key: 'products', label: 'Products by Category', href: BASE + 'pages/services.html' },
+    { key: 'recipes',  label: 'Recipes & Journal',   href: BASE + 'pages/blog.html' },
     { key: 'about',    label: 'Our Story',           href: BASE + 'pages/about.html' },
     { key: 'pricing',  label: 'Plans & Pricing',     href: BASE + 'pages/pricing.html' },
-    { key: 'blog',     label: 'The Journal',         href: BASE + 'pages/blog.html' },
-    { key: 'contact',  label: 'Contact & Visit',     href: BASE + 'pages/contact.html' }
+    { key: 'contact',  label: 'Contact & Enquiry',   href: BASE + 'pages/contact.html' }
   ];
 
   var SERVICE_LINKS = [
-    { label: 'Cold Stone Chakki Milling', href: BASE + 'pages/service-details.html?id=stone-chakki-milling' },
-    { label: 'Signature Masala Blending',  href: BASE + 'pages/service-details.html?id=custom-masala-blending' },
-    { label: 'Whole Spice Cleaning & Grading', href: BASE + 'pages/service-details.html?id=whole-spice-grading' },
-    { label: 'Commercial Bulk Supply',     href: BASE + 'pages/service-details.html?id=commercial-bulk-supply' },
-    { label: 'Private Label Packaging',    href: BASE + 'pages/service-details.html?id=private-label-packaging' },
-    { label: 'Flavour Consultancy',        href: BASE + 'pages/service-details.html?id=spice-consultancy' }
+    { label: 'Signature Masala Blends',  href: BASE + 'pages/service-details.html?id=custom-masala-blending' },
+    { label: 'Cold Stone Chakki Spices', href: BASE + 'pages/service-details.html?id=stone-chakki-milling' },
+    { label: 'Whole Herbs & Grading',    href: BASE + 'pages/service-details.html?id=whole-spice-grading' },
+    { label: 'Commercial Bulk Supply',   href: BASE + 'pages/service-details.html?id=commercial-bulk-supply' },
+    { label: 'Gourmet Condiment Packs',  href: BASE + 'pages/service-details.html?id=private-label-packaging' },
+    { label: 'Culinary Herb Consultancy', href: BASE + 'pages/service-details.html?id=spice-consultancy' }
   ];
 
   var LEGAL_LINKS = [
@@ -70,17 +70,17 @@
           '<div class="footer-top">' +
             '<div class="footer-brand">' +
               '<div class="brand-footer-seal" style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">' +
-                '<img src="' + BASE + 'assets/logo.png" alt="Amritha Spice Mill" class="footer-seal-img" style="width:54px;height:54px;border-radius:50%;object-fit:contain;box-shadow:0 4px 14px rgba(0,0,0,0.3);">' +
-                '<div><h3 style="margin:0;font-size:1.25rem;">Amritha Spice Mill</h3><span style="font-size:0.75rem;letter-spacing:0.14em;color:var(--color-soft-gold);text-transform:uppercase;">Traditional Craft • Estd 1948</span></div>' +
+                '<img src="' + BASE + 'assets/logo.png" alt="Herbs &amp; Spices" class="footer-seal-img" style="width:54px;height:54px;border-radius:50%;object-fit:contain;box-shadow:0 4px 14px rgba(0,0,0,0.3);">' +
+                '<div><h3 style="margin:0;font-size:1.25rem;">Herbs &amp; Spices</h3><span style="font-size:0.75rem;letter-spacing:0.14em;color:var(--color-soft-gold);text-transform:uppercase;">Spice &amp; Condiments Store</span></div>' +
               '</div>' +
-              '<p>Preserving South Asia\'s proud heritage of slow stone-ground spices, pure ' +
-                'single-estate harvests, and custom bespoke masala recipes for discerning ' +
-                'kitchens worldwide.</p>' +
+              '<p>Artisan spice &amp; condiments store preserving traditional slow stone-milling, ' +
+                'handcrafted signature blends, pure botanical herbs, single-estate harvests, and ' +
+                'custom seasoning recipes for home cooks and culinary masters worldwide.</p>' +
               '<div class="footer-socials">' +
-                '<a href="#" class="social-icon-btn" aria-label="Amritha Spice Mill on Instagram">' + ICON.instagram + '</a>' +
-                '<a href="#" class="social-icon-btn" aria-label="Amritha Spice Mill on Facebook">' + ICON.facebook + '</a>' +
-                '<a href="#" class="social-icon-btn" aria-label="Amritha Spice Mill on YouTube">' + ICON.youtube + '</a>' +
-                '<a href="#" class="social-icon-btn" aria-label="Chat with us on WhatsApp">' + ICON.whatsapp + '</a>' +
+                '<a href="#" class="social-icon-btn" aria-label="Herbs &amp; Spices on Instagram">' + ICON.instagram + '</a>' +
+                '<a href="#" class="social-icon-btn" aria-label="Herbs &amp; Spices on Facebook">' + ICON.facebook + '</a>' +
+                '<a href="#" class="social-icon-btn" aria-label="Herbs &amp; Spices on YouTube">' + ICON.youtube + '</a>' +
+                '<a href="#" class="social-icon-btn" aria-label="Chat with Herbs &amp; Spices on WhatsApp">' + ICON.whatsapp + '</a>' +
               '</div>' +
             '</div>' +
 
@@ -90,7 +90,7 @@
             '</div>' +
 
             '<div class="footer-col">' +
-              '<h4>Our Services</h4>' +
+              '<h4>Products &amp; Craft</h4>' +
               '<ul class="footer-links">' + list(SERVICE_LINKS) + '</ul>' +
             '</div>' +
 
@@ -99,14 +99,14 @@
               '<ul class="footer-contact-info">' +
                 '<li>' + ICON.pin + '<span>48 Heritage Spice Quarter, Bazaar Road, Mattancherry, Kochi 682002</span></li>' +
                 '<li>' + ICON.phone + '<span>+91 98401 23456 / 0484 2221948</span></li>' +
-                '<li>' + ICON.mail + '<span>mill@amrithaspices.in</span></li>' +
+                '<li>' + ICON.mail + '<span>hello@herbsandspices.store</span></li>' +
                 '<li>' + ICON.clock + '<span>Mon – Sat: 8:00 AM – 8:00 PM<br>Sunday: 9:00 AM – 2:00 PM</span></li>' +
               '</ul>' +
             '</div>' +
           '</div>' +
 
           '<div class="footer-bottom">' +
-            '<div>&copy; <span data-year>2026</span> Amritha Traditional Spice Mill Pvt Ltd. All Rights Reserved.</div>' +
+            '<div>&copy; <span data-year>2026</span> Herbs &amp; Spices Store Pvt Ltd. All Rights Reserved.</div>' +
             '<div class="footer-legal-links">' +
               LEGAL_LINKS.map(function (item) {
                 return '<a href="' + item.href + '">' + item.label + '</a>';

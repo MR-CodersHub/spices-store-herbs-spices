@@ -185,7 +185,7 @@
   }
 
   function setTitle(text) {
-    if (text) document.title = text + ' | Amritha Spice Mill';
+    if (text) document.title = text + ' | Herbs & Spices — Spice & Condiments Store';
   }
 
   window.PageKit = {

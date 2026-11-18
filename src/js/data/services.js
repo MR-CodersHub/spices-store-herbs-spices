@@ -13,7 +13,7 @@
 
   var IMG = window.AMRITHA_IMG || {};
 
-  window.AMRITHA_SERVICES = [
+  window.HERBS_SPICES_PRODUCTS = window.HERBS_SPICES_SERVICES = window.AMRITHA_SERVICES = [
     /* ------------------------------------------------------------------ */
     {
       id: 'stone-chakki-milling',

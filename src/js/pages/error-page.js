@@ -23,7 +23,7 @@
   ];
 
   var PAGES = [
-    { title: 'The Amritha Spice Mill — home', href: '../index.html', text: 'Heritage cold stone-ground spices from Mattancherry, Kochi.' },
+    { title: 'Herbs & Spices — Home', href: '../index.html', text: 'Artisanal stone-ground spices, signature blends and condiments.' },
     { title: 'Our Story', href: 'about.html', text: 'Three generations on the same stones, since 1948.' },
     { title: 'Service catalogue', href: 'services.html', text: 'Nine services: milling, blending, grading, bulk, private label, consultancy, gifting, training, oils.' },
     { title: 'Plans & pricing', href: 'pricing.html', text: 'Pantry, Kitchen, Restaurant and Contract plans.' },

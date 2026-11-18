@@ -13,12 +13,12 @@
     {
       year: '1948',
       title: 'Two rooms behind Bazaar Road',
-      text: 'Amritha Menon leases two rooms in Mattancherry and installs a second-hand hand-crank chakki from a decommissioned rice mill in Palakkad. The bearings are worn, the stones are old, and the grinding is slow. He grinds clean pepper for the traders on the lane and does not blend a thing.'
+      text: 'The founders of Herbs & Spices lease two rooms in Mattancherry and install a second-hand hand-crank chakki from a decommissioned rice mill in Palakkad. The bearings are worn, the stones are old, and the grinding is slow. They grind clean pepper for the traders on the lane and do not blend a thing.'
     },
     {
       year: '1962',
-      title: 'The first masala bench',
-      text: 'Traders start asking for blends rather than single spices. A hand-assembled bench is set up in the back room — components roasted separately on a cast-iron pan, ground in small charges, and blended by weight on a brass scale. The bench is still in the building.'
+      title: 'The first signature blend bench',
+      text: 'Traders start asking for signature blends rather than single spices. A hand-assembled bench is set up in the back room — components roasted separately on a cast-iron pan, ground in small charges, and blended by weight on a brass scale. The bench is still in the building.'
     },
     {
       year: '1978',
@@ -43,7 +43,7 @@
     {
       year: 'Today',
       title: 'The third generation, and a waiting list',
-      text: 'Lakshmi Amritha runs the grower contracts; Ravi runs the mill floor. The customer still brings the spice, the mill still does not adulterate it, and the batch card still has to be filled in by hand.'
+      text: 'Lakshmi Menon runs the grower contracts; Ravi runs the mill floor. The customer still brings the spice, the atelier still does not adulterate it, and the batch card still has to be filled in by hand.'
     }
   ];
 
@@ -80,8 +80,8 @@
       img: '../assets/men3.jpg'
     },
     {
-      initials: 'LA',
-      name: 'Lakshmi Amritha',
+      initials: 'LM',
+      name: 'Lakshmi Menon',
       role: 'Sourcing Director',
       text: 'Holds the direct contracts with 2,400 farming families and visits every cluster between harvest and signature.',
       tags: ['Grower contracts', 'Sourcing'],

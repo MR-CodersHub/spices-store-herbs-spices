@@ -17,14 +17,14 @@
      records so the article data stays purely editorial. */
   var AUTHOR_BIO = {
     'Ravi Menon': 'Third-generation Master Miller. Runs the stones, keeps the batch log, and is the reason most of the temperatures quoted here are logged rather than estimated.',
-    'Lakshmi Amritha': 'Runs sourcing and the grower contracts across Salem, Guntur, Ramganj Mandi, Unjha and the Idukki highlands.',
+    'Lakshmi Menon': 'Runs sourcing and the grower contracts across Salem, Guntur, Ramganj Mandi, Unjha and the Idukki highlands.',
     'Chef Nikhil Varma': 'Exec chef, twenty-two years in Kerala and Chettinad kitchens. Writes the recipes, and argues with us about the heat levels.',
     'Dr Meenakshi Iyer': 'Food scientist. Handles the lab work — curcumin, volatile oil and moisture — and explains what the numbers actually mean.'
   };
 
   var AUTHOR_LINKS = {
     'Ravi Menon': { posts: 'Understanding Volatile Oils', href: 'blog-details.html?id=understanding-volatile-oils' },
-    'Lakshmi Amritha': { posts: 'Sourcing Turmeric in Salem', href: 'blog-details.html?id=sourcing-turmeric-salem' },
+    'Lakshmi Menon': { posts: 'Sourcing Turmeric in Salem', href: 'blog-details.html?id=sourcing-turmeric-salem' },
     'Chef Nikhil Varma': { posts: 'A Chettinad Pepper Masala', href: 'blog-details.html?id=chettinad-pepper-masala' },
     'Dr Meenakshi Iyer': { posts: 'Stone vs Roller Mill', href: 'blog-details.html?id=cold-stone-vs-roller-mill' }
   };
@@ -66,7 +66,7 @@
       image.setAttribute('src', post.image);
       image.setAttribute('alt', post.imageAlt);
     }
-    setText('article-caption', post.imageAlt + ' — Amritha Spice Mill, Kerala.');
+    setText('article-caption', post.imageAlt + ' — Herbs & Spices, Kerala.');
   }
 
   function renderShare() {
@@ -75,7 +75,7 @@
     if (!wrap) return;
 
     var url = encodeURIComponent(window.location.href);
-    var title = encodeURIComponent(document.title.replace(' | Amritha Spice Mill', ''));
+    var title = encodeURIComponent(document.title.replace(' | Herbs & Spices — Spice & Condiments Store', '').replace(' | Amritha Spice Mill', ''));
 
     var targets = [
       { icon: 'whatsapp', label: 'Share on WhatsApp', href: 'https://wa.me/?text=' + title + '%20' + url },
@@ -348,3 +348,4 @@
     boot();
   }
 })(window, document);
+

@@ -1,5 +1,6 @@
 /**
- * AMRITHA TRADITIONAL SPICE MILL — HOME PAGE SCRIPT
+ * HERBS & SPICES — SPICE & CONDIMENTS STORE
+ * HOME PAGE SCRIPT — Signature Blends & Interactive Atelier
  * Handles the spice collection filter, the grind texture tester, the three
  * home-page modals and their form acknowledgements.
  *
@@ -22,7 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       spiceCards.forEach(card => {
         const category = card.getAttribute('data-category');
-        if (filter === 'all' || category === filter) {
+        if (filter === 'all' || category === filter || 
+            (filter === 'signature-blends' && (category === 'masala-blends' || category === 'signature-blends')) ||
+            (filter === 'condiments' && (category === 'condiments' || category === 'condiment'))) {
           card.style.display = 'grid';
           card.style.opacity = '1';
         } else {

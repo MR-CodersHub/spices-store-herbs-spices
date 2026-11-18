@@ -27,7 +27,7 @@
   /* Sections                                                            */
   /* ------------------------------------------------------------------ */
   function renderHero(service) {
-    document.title = service.name + ' | Amritha Spice Mill';
+    document.title = service.name + ' | Herbs & Spices — Spice & Condiments Store';
 
     var meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute('content', service.tagline + ' ' + service.summary);

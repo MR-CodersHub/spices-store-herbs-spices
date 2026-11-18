@@ -1,43 +1,45 @@
 /* ==========================================================================
-   AMRITHA TRADITIONAL SPICE MILL — PREMIUM HERITAGE STYLESHEET
-   Inspired by classic traditional editorial food branding
+   HERBS & SPICES — SPICE & CONDIMENTS STORE PREMIUM STYLESHEET
+   Warm artisanal branding featuring FBBA72, E38741, CA5310, 8F250C, 691E06
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. CSS VARIABLES & DESIGN TOKENS
    -------------------------------------------------------------------------- */
 :root {
-  /* Brand Color Palette */
-  --color-primary: #082052;          /* Deep Heritage Navy */
-  --color-primary-dark: #051433;     /* Darker Navy for shadows/depth */
-  --color-primary-light: #0f3073;    /* Hover Navy */
-  --color-primary-text: #F8F0E5;     /* Warm Cream / Ivory text on navy */
-  --color-warm-bg: #F8F0E5;          /* Warm Ivory Canvas */
-  --color-warm-surface: #FFF9F0;     /* Light Cream Surface */
+  /* Warm Color Palette — FBBA72, E38741, CA5310, 8F250C, 691E06 */
+  --color-primary: #691E06;          /* Deep Dark Warm Roast */
+  --color-primary-dark: #461203;     /* Deeper rich roast for depth */
+  --color-primary-light: #8F250C;    /* Warm Mahogany / Deep Red */
+  --color-accent-rust: #CA5310;      /* Vibrant Warm Spice Rust */
+  --color-accent-amber: #E38741;     /* Golden Amber / Terracotta */
+  --color-soft-gold: #FBBA72;        /* Soft Warm Gold / Amber Highlight */
+  --color-gold-hover: #E38741;       /* Warm Terracotta Hover */
+  --color-primary-text: #FFF7ED;     /* Warm Ivory text on dark tones */
+  --color-warm-bg: #FAF3EA;          /* Warm Ivory Canvas */
+  --color-warm-surface: #FFF8F0;     /* Light Warm Cream Surface */
   --color-warm-card: #FFFFFF;        /* Crisp Card Base */
-  --color-dark-text: #241C16;        /* Deep Espresso text */
-  --color-muted-text: #615349;       /* Earthy Charcoal Muted */
-  --color-soft-gold: #C9A45C;        /* Soft Antique Gold */
-  --color-gold-hover: #b38e48;       /* Deeper Gold */
-  --color-gold-tint: rgba(201, 164, 92, 0.12);
-  --color-gold-border: rgba(201, 164, 92, 0.35);
+  --color-dark-text: #2C150D;        /* Deep Warm Espresso text */
+  --color-muted-text: #715549;       /* Earthy Warm Charcoal Muted */
+  --color-gold-tint: rgba(251, 186, 114, 0.16);
+  --color-gold-border: rgba(227, 135, 65, 0.35);
 
   /* Spice Accents */
-  --color-turmeric: #E89D1C;         /* Vibrant Turmeric Yellow */
-  --color-chilli: #B52B1E;           /* Kashmiri / Guntur Chilli Red */
-  --color-terracotta: #BD5A38;       /* Warm Terracotta Earth */
-  --color-sage: #3E6347;             /* Cardamom / Herbal Green */
-  --color-pepper: #1C1917;           /* Tellicherry Peppercorn Black */
+  --color-turmeric: #E38741;         /* Warm Golden Amber */
+  --color-chilli: #8F250C;           /* Deep Warm Mahogany Crimson */
+  --color-terracotta: #CA5310;       /* Rich Spice Rust */
+  --color-sage: #4E684D;             /* Botanical Garden Herb Green */
+  --color-pepper: #261108;           /* Tellicherry Peppercorn Roast */
 
   /* Typography */
   --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Shadows & Elevations */
-  --shadow-sm: 0 2px 8px rgba(36, 28, 22, 0.05);
-  --shadow-md: 0 8px 24px rgba(36, 28, 22, 0.08);
-  --shadow-lg: 0 16px 40px rgba(8, 32, 82, 0.12);
-  --shadow-gold: 0 6px 20px rgba(201, 164, 92, 0.25);
+  --shadow-sm: 0 2px 8px rgba(44, 21, 13, 0.06);
+  --shadow-md: 0 8px 24px rgba(105, 30, 6, 0.09);
+  --shadow-lg: 0 16px 40px rgba(105, 30, 6, 0.16);
+  --shadow-gold: 0 6px 20px rgba(227, 135, 65, 0.28);
 
   /* Layout */
   --container-max: 1240px;
@@ -67,7 +69,7 @@ body {
   color: var(--color-dark-text);
   line-height: 1.65;
   overflow-x: hidden;
-  background-image: radial-gradient(rgba(201, 164, 92, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(227, 135, 65, 0.04) 1px, transparent 1px);
   background-size: 32px 32px;
   padding-top: 0;
 }
@@ -188,7 +190,7 @@ h1, h2, h3, h4, .serif-font {
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(8, 32, 82, 0.08);
+  box-shadow: 0 4px 12px rgba(105, 30, 6, 0.08);
 }
 
 /* Primary Navy Button (similar to reference's 'Find a Retailer') */
@@ -201,25 +203,25 @@ h1, h2, h3, h4, .serif-font {
 .btn-primary:hover {
   background-color: var(--color-primary-light);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(8, 32, 82, 0.25);
+  box-shadow: 0 6px 18px rgba(105, 30, 6, 0.25);
   color: var(--color-primary-text);
 }
 
 /* Gold Button */
 .btn-gold {
-  background: linear-gradient(135deg, #d8b26a, var(--color-soft-gold));
+  background: linear-gradient(135deg, var(--color-accent-amber), var(--color-soft-gold));
   color: var(--color-primary-dark);
   border: 1px solid var(--color-soft-gold);
   font-weight: 700;
 }
 
 .btn-gold:hover {
-  background: linear-gradient(135deg, #e4c483, #d8b26a);
+  background: linear-gradient(135deg, var(--color-soft-gold), var(--color-accent-amber));
   transform: translateY(-2px);
   box-shadow: var(--shadow-gold);
 }
 
-/* Ghost / Outline on Navy */
+/* Ghost / Outline on Navy / Deep Primary */
 .btn-outline-light,
 .btn-outline-light:visited {
   background-color: rgba(255, 255, 255, 0.08);
@@ -232,10 +234,10 @@ h1, h2, h3, h4, .serif-font {
 .btn-outline-light:hover,
 .btn-outline-light:focus {
   border-color: var(--color-soft-gold);
-  color: #051433 !important;
+  color: #461203 !important;
   background-color: var(--color-soft-gold);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(201, 164, 92, 0.35);
+  box-shadow: 0 6px 18px rgba(227, 135, 65, 0.35);
 }
 
 /* Outline on Ivory */
@@ -260,7 +262,7 @@ h1, h2, h3, h4, .serif-font {
   font-size: 0.78rem;
   letter-spacing: 0.1em;
   padding: 8px 0;
-  border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+  border-bottom: 1px solid rgba(227, 135, 65, 0.2);
   text-align: center;
 }
 
@@ -292,7 +294,7 @@ h1, h2, h3, h4, .serif-font {
   right: 0;
   z-index: 1000;
   background-color: var(--color-warm-bg);
-  border-bottom: 1px solid rgba(201, 164, 92, 0.28);
+  border-bottom: 1px solid rgba(227, 135, 65, 0.28);
   box-shadow: 0 4px 20px rgba(36, 28, 22, 0.04);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -335,14 +337,14 @@ h1, h2, h3, h4, .serif-font {
   object-fit: contain;
   background-color: var(--color-primary);
   border: 1.5px solid var(--color-soft-gold);
-  box-shadow: 0 3px 10px rgba(8, 32, 82, 0.22);
+  box-shadow: 0 3px 10px rgba(105, 30, 6, 0.22);
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
   flex-shrink: 0;
 }
 
 .nav-brand:hover .nav-brand-logo {
   transform: scale(1.06) rotate(1deg);
-  box-shadow: 0 6px 16px rgba(201, 164, 92, 0.38);
+  box-shadow: 0 6px 16px rgba(227, 135, 65, 0.38);
 }
 
 .nav-brand-copy {
@@ -451,14 +453,14 @@ h1, h2, h3, h4, .serif-font {
   text-decoration: none;
   white-space: nowrap;
   transition: var(--transition);
-  box-shadow: 0 3px 10px rgba(8, 32, 82, 0.16);
+  box-shadow: 0 3px 10px rgba(105, 30, 6, 0.16);
 }
 
 .nav-cta-btn:hover {
   background-color: var(--color-primary-light);
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(8, 32, 82, 0.28);
+  box-shadow: 0 6px 18px rgba(105, 30, 6, 0.28);
 }
 
 .mobile-toggle {
@@ -517,22 +519,22 @@ h1, h2, h3, h4, .serif-font {
 }
 
 /* --------------------------------------------------------------------------
-   6. HERO SECTION (EDITORIAL PHOTOGRAPHY & NAVY BANNER)
+   6. HERO SECTION (EDITORIAL PHOTOGRAPHY & WARM SPICE BANNER)
    Strictly following the composition of the reference image:
-   Navy backdrop band, left craft sack spilling spice powder,
+   Warm deep roast backdrop band (#691E06 / #8F250C), left craft sack spilling spice powder,
    right ceramic/brass bowl with freshly prepared spices,
    and centered monumental typography with gold divider line.
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
-  background-color: #051433;
-  background-image: linear-gradient(180deg, rgba(4, 12, 28, 0.88) 0%, rgba(5, 18, 44, 0.92) 50%, rgba(4, 12, 28, 0.95) 100%),
-                    radial-gradient(ellipse at center, rgba(8, 32, 82, 0.82) 0%, rgba(4, 12, 28, 0.96) 100%),
+  background-color: var(--color-primary, #691E06);
+  background-image: linear-gradient(180deg, rgba(35, 9, 2, 0.90) 0%, rgba(105, 30, 6, 0.92) 50%, rgba(35, 9, 2, 0.95) 100%),
+                    radial-gradient(ellipse at center, rgba(143, 37, 12, 0.82) 0%, rgba(35, 9, 2, 0.96) 100%),
                     url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1920&q=80');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  color: #F8F0E5;
+  color: var(--color-primary-text, #FFF7ED);
   overflow: hidden;
   padding: 56px 0 64px;
   border-bottom: 4px solid var(--color-soft-gold);
@@ -560,7 +562,7 @@ h1, h2, h3, h4, .serif-font {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(201, 164, 92, 0.3);
+  border: 1px solid rgba(227, 135, 65, 0.3);
   transform: rotate(-2deg);
   transition: transform 0.5s ease;
 }
@@ -649,7 +651,7 @@ h1, h2, h3, h4, .serif-font {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(201, 164, 92, 0.3);
+  border: 1px solid rgba(227, 135, 65, 0.3);
   transform: rotate(2deg);
   transition: transform 0.5s ease;
 }
@@ -684,7 +686,7 @@ h1, h2, h3, h4, .serif-font {
 .hero-trust-bar {
   margin-top: 48px;
   padding-top: 24px;
-  border-top: 1px solid rgba(201, 164, 92, 0.28);
+  border-top: 1px solid rgba(227, 135, 65, 0.28);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -737,7 +739,7 @@ h1, h2, h3, h4, .serif-font {
 
 .intro-table-stage {
   position: relative;
-  background: radial-gradient(ellipse at 50% 60%, rgba(201, 164, 92, 0.15) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 50% 60%, rgba(227, 135, 65, 0.15) 0%, transparent 70%);
   padding: 30px 20px 0;
   border-radius: 12px;
 }
@@ -747,7 +749,7 @@ h1, h2, h3, h4, .serif-font {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 24px 50px rgba(36, 28, 22, 0.16);
-  border: 1px solid rgba(201, 164, 92, 0.35);
+  border: 1px solid rgba(227, 135, 65, 0.35);
 }
 
 .intro-image-container img {
@@ -781,7 +783,7 @@ h1, h2, h3, h4, .serif-font {
   padding: 12px 18px;
   border-radius: 4px;
   border: 1px solid var(--color-soft-gold);
-  box-shadow: 0 8px 24px rgba(8, 32, 82, 0.3);
+  box-shadow: 0 8px 24px rgba(105, 30, 6, 0.3);
   text-align: center;
 }
 
@@ -872,8 +874,8 @@ h1, h2, h3, h4, .serif-font {
 .spice-collection-section {
   padding: 80px 0 100px;
   background-color: var(--color-warm-surface);
-  border-top: 1px solid rgba(201, 164, 92, 0.2);
-  border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+  border-top: 1px solid rgba(227, 135, 65, 0.2);
+  border-bottom: 1px solid rgba(227, 135, 65, 0.2);
 }
 
 /* Filter Nav Tabs */
@@ -903,7 +905,7 @@ h1, h2, h3, h4, .serif-font {
   background-color: var(--color-primary);
   color: var(--color-primary-text);
   border-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(8, 32, 82, 0.15);
+  box-shadow: 0 4px 12px rgba(105, 30, 6, 0.15);
 }
 
 /* Spice Rows Layout (Reflective of reference's stacked flour selector) */
@@ -917,7 +919,7 @@ h1, h2, h3, h4, .serif-font {
 
 .spice-row-card {
   background: var(--color-warm-card);
-  border: 1px solid rgba(201, 164, 92, 0.28);
+  border: 1px solid rgba(227, 135, 65, 0.28);
   border-radius: 6px;
   padding: 16px 24px;
   display: grid;
@@ -958,7 +960,7 @@ h1, h2, h3, h4, .serif-font {
   height: 76px;
   border-radius: 6px;
   overflow: hidden;
-  border: 1px solid rgba(201, 164, 92, 0.3);
+  border: 1px solid rgba(227, 135, 65, 0.3);
   position: relative;
 }
 
@@ -1008,7 +1010,7 @@ h1, h2, h3, h4, .serif-font {
   color: var(--color-dark-text);
   padding: 2px 8px;
   border-radius: 4px;
-  border: 1px solid rgba(201, 164, 92, 0.25);
+  border: 1px solid rgba(227, 135, 65, 0.25);
 }
 
 /* Action Icons (Magnifying Glass & Bag / Custom Grind inquiry) */
@@ -1056,7 +1058,7 @@ h1, h2, h3, h4, .serif-font {
    -------------------------------------------------------------------------- */
 .grinding-service-section {
   padding: 100px 0;
-  background: radial-gradient(circle at 10% 20%, rgba(201, 164, 92, 0.08) 0%, transparent 60%),
+  background: radial-gradient(circle at 10% 20%, rgba(227, 135, 65, 0.08) 0%, transparent 60%),
               var(--color-warm-bg);
   position: relative;
 }
@@ -1070,7 +1072,7 @@ h1, h2, h3, h4, .serif-font {
 
 .grind-step-card {
   background: var(--color-warm-card);
-  border: 1px solid rgba(201, 164, 92, 0.35);
+  border: 1px solid rgba(227, 135, 65, 0.35);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -1229,7 +1231,7 @@ h1, h2, h3, h4, .serif-font {
   align-items: center;
   gap: 8px;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(201, 164, 92, 0.35);
+  border: 1px solid rgba(227, 135, 65, 0.35);
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.82rem;
@@ -1264,7 +1266,7 @@ h1, h2, h3, h4, .serif-font {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  background: rgba(8, 32, 82, 0.9);
+  background: rgba(105, 30, 6, 0.9);
   backdrop-filter: blur(8px);
   border: 1px solid var(--color-soft-gold);
   padding: 10px 16px;
@@ -1347,7 +1349,7 @@ h1, h2, h3, h4, .serif-font {
   background: var(--color-warm-bg);
   padding: 4px 12px;
   border-radius: 20px;
-  border: 1px solid rgba(201, 164, 92, 0.3);
+  border: 1px solid rgba(227, 135, 65, 0.3);
   display: inline-block;
 }
 
@@ -1362,8 +1364,8 @@ h1, h2, h3, h4, .serif-font {
 .why-us-section {
   padding: 80px 0;
   background-color: var(--color-warm-surface);
-  border-top: 1px solid rgba(201, 164, 92, 0.2);
-  border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+  border-top: 1px solid rgba(227, 135, 65, 0.2);
+  border-bottom: 1px solid rgba(227, 135, 65, 0.2);
 }
 
 .why-us-grid {
@@ -1375,7 +1377,7 @@ h1, h2, h3, h4, .serif-font {
 .why-us-item {
   padding: 24px;
   text-align: center;
-  border-right: 1px solid rgba(201, 164, 92, 0.2);
+  border-right: 1px solid rgba(227, 135, 65, 0.2);
 }
 
 .why-us-item:last-child {
@@ -1479,7 +1481,7 @@ h1, h2, h3, h4, .serif-font {
   background-color: var(--color-primary-dark);
   color: var(--color-primary-text);
   padding: 80px 0 30px;
-  border-top: 1px solid rgba(201, 164, 92, 0.3);
+  border-top: 1px solid rgba(227, 135, 65, 0.3);
 }
 
 .footer-top {
@@ -1538,7 +1540,7 @@ h1, h2, h3, h4, .serif-font {
   width: 36px;
   height: 36px;
   border-radius: 4px;
-  border: 1px solid rgba(201, 164, 92, 0.3);
+  border: 1px solid rgba(227, 135, 65, 0.3);
   background: rgba(255, 255, 255, 0.04);
   color: var(--color-primary-text);
   display: flex;
@@ -1617,7 +1619,7 @@ h1, h2, h3, h4, .serif-font {
 
 .footer-bottom {
   padding-top: 30px;
-  border-top: 1px solid rgba(201, 164, 92, 0.15);
+  border-top: 1px solid rgba(227, 135, 65, 0.15);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1713,7 +1715,7 @@ h1, h2, h3, h4, .serif-font {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, var(--color-warm-bg), rgba(8, 32, 82, 0.4));
+  background: linear-gradient(to top, var(--color-warm-bg), rgba(105, 30, 6, 0.4));
 }
 
 .modal-body-padding {
@@ -1757,7 +1759,7 @@ h1, h2, h3, h4, .serif-font {
 .modal-form-group select:focus,
 .modal-form-group textarea:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(8, 32, 82, 0.1);
+  box-shadow: 0 0 0 3px rgba(105, 30, 6, 0.1);
 }
 
 .checkbox-group {
@@ -1844,7 +1846,7 @@ h1, h2, h3, h4, .serif-font {
 
   .why-us-item {
     border-right: none;
-    border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+    border-bottom: 1px solid rgba(227, 135, 65, 0.2);
   }
 
   .footer-top {
@@ -1920,3 +1922,4 @@ h1, h2, h3, h4, .serif-font {
     gap: 12px;
   }
 }
+

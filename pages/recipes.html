@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes &amp; Spice Journal | Herbs &amp; Spices — Spice &amp; Condiments Store</title>
+  <meta name="description" content="Tested culinary recipes, aromatic spice pairings, signature blend techniques, and condiment guides from Herbs &amp; Spices.">
+  <meta name="theme-color" content="#691E06">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+
+  <script src="../src/js/theme.js"></script>
+  <script src="../src/js/rtl-toggle.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../src/js/tailwind-config.js"></script>
+
+  <link rel="stylesheet" href="../src/css/style.css?v=2.0">
+  <link rel="stylesheet" href="../src/css/pages.css?v=2.0">
+</head>
+<body data-base="../" data-page="recipes">
+
+  <div id="site-navbar"></div>
+
+  <main id="main-content">
+
+    <!-- 1. PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="crumb-sep" aria-hidden="true">/</span>
+          <span class="crumb-current" aria-current="page">Recipes</span>
+        </nav>
+        <span class="eyebrow">AROMATIC KITCHEN INSPIRATION</span>
+        <h1>Recipes &amp; Culinary Journal</h1>
+        <p>Tested recipes, aromatic spice pairings, signature blend techniques, and condiment crafting from the Herbs &amp; Spices test kitchen.</p>
+      </div>
+    </section>
+
+    <!-- 2. FEATURED RECIPE -->
+    <section class="page-section-tight" aria-labelledby="featured-heading">
+      <div class="container">
+        <h2 id="featured-heading" class="sr-only">Featured recipe</h2>
+        <div id="featured-slot">
+          <noscript><p>Enable JavaScript to read our recipes, or visit an article directly.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SEARCH + FILTERS + GRID -->
+    <section class="page-section-sm" aria-labelledby="archive-heading">
+      <div class="container">
+        <h2 id="archive-heading" class="sr-only">All recipes</h2>
+
+        <div class="filter-bar" style="margin-bottom:34px;">
+          <div class="search-wrap">
+            <span id="blog-search-icon" aria-hidden="true"></span>
+            <label class="sr-only" for="blog-search">Search Recipes</label>
+            <input class="search-input" id="blog-search" type="search" placeholder="Search “recipes”, “signature blends”, “masala”…" autocomplete="off">
+          </div>
+          <div class="filter-chips" data-filter-group="posts" role="group" aria-label="Filter recipes by category">
+            <button class="filter-chip active" data-filter-value="all" type="button">All Recipes</button>
+          </div>
+          <p class="filter-count"><strong id="blog-count">0</strong> of <span id="blog-total">0</span> recipes</p>
+        </div>
+
+        <div class="grid grid-3" id="blog-grid" aria-live="polite">
+          <noscript><p>Enable JavaScript to browse recipes.</p></noscript>
+        </div>
+
+        <div class="result-empty" id="blog-empty">
+          <h3>Nothing matches that search</h3>
+          <p>Try searching for a spice or recipe name, or browse our entire collection.</p>
+          <p style="margin-top:18px;"><button class="btn btn-primary btn-sm" id="blog-reset" type="button">Clear filters</button></p>
+        </div>
+
+        <div class="pagination" id="blog-pagination" aria-label="Recipe pages"></div>
+      </div>
+    </section>
+
+    <!-- 4. BY CATEGORY -->
+    <section class="page-section-sm section-alt" aria-labelledby="categories-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">BROWSE BY CULINARY FOCUS</span>
+          <h2 id="categories-heading">Explore Recipes by Category</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+        </div>
+        <div class="grid grid-3" id="category-cards"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../src/js/data/images.js"></script>
+  <script src="../src/js/data/icons.js"></script>
+  <script src="../src/js/data/posts.js"></script>
+  <script src="../src/js/data/services.js"></script>
+
+  <script src="../src/js/toast.js"></script>
+  <script src="../src/js/navbar.js?v=2.0"></script>
+  <script src="../src/js/footer.js"></script>
+  <script src="../src/js/ui.js"></script>
+  <script src="../src/js/form-validation.js"></script>
+  <script src="../src/js/pages/kit.js"></script>
+  <script src="../src/js/pages/blog.js"></script>
+
+</body>
+</html>
+

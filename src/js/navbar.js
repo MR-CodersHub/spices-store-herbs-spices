@@ -1,10 +1,6 @@
 /* ==========================================================================
-   SHARED NAVBAR — rendered from JavaScript on every public page
-   --------------------------------------------------------------------
-   The markup produced here is byte-for-byte the same on every page, so the
-   navigation looks identical site-wide. Only the `active` class and
-   `aria-current` attribute change depending on the current page.
-   Page context is read from <body data-base="…" data-page="…">.
+   SHARED NAVBAR — HERBS & SPICES
+   Spice & Condiments Store
    ========================================================================== */
 (function (window, document) {
   'use strict';
@@ -15,10 +11,9 @@
 
   var LINKS = [
     { key: 'home',      label: 'Home',      href: BASE + 'index.html' },
-    { key: 'home-2',    label: 'Home 2',    href: BASE + 'pages/home-2.html' },
-    { key: 'about',     label: 'About',     href: BASE + 'pages/about.html' },
-    { key: 'services',  label: 'Services',  href: BASE + 'pages/services.html' },
-    { key: 'blog',      label: 'Journal',   href: BASE + 'pages/blog.html' },
+    { key: 'products',  label: 'Products',  href: BASE + 'pages/services.html' },
+    { key: 'recipes',   label: 'Recipes',   href: BASE + 'pages/blog.html' },
+    { key: 'about',     label: 'Our Story', href: BASE + 'pages/about.html' },
     { key: 'pricing',   label: 'Pricing',   href: BASE + 'pages/pricing.html' },
     { key: 'contact',   label: 'Contact',   href: BASE + 'pages/contact.html' }
   ];
@@ -66,7 +61,10 @@
   }
 
   function navItem(item) {
-    var active = PAGE === item.key || (item.key === 'home' && PAGE === 'home-2');
+    var active = PAGE === item.key ||
+      (item.key === 'home' && PAGE === 'home-2') ||
+      (item.key === 'products' && (PAGE === 'services' || PAGE === 'service-details' || PAGE === 'products')) ||
+      (item.key === 'recipes' && (PAGE === 'blog' || PAGE === 'blog-details' || PAGE === 'recipes'));
     return (
       '<li><a href="' + item.href + '" class="nav-link' + (active ? ' active' : '') + '"' +
       (active ? ' aria-current="page"' : '') + '>' + item.label + '</a></li>'
@@ -74,7 +72,10 @@
   }
 
   function secondaryItem(item) {
-    var active = PAGE === item.key;
+    var active = PAGE === item.key ||
+      (item.key === 'home' && PAGE === 'home-2') ||
+      (item.key === 'products' && (PAGE === 'services' || PAGE === 'service-details' || PAGE === 'products')) ||
+      (item.key === 'recipes' && (PAGE === 'blog' || PAGE === 'blog-details' || PAGE === 'recipes'));
     return (
       '<li><a href="' + item.href + '" class="mobile-nav-link"' +
       (active ? ' aria-current="page" style="color:var(--color-soft-gold);"' : '') + '>' +
@@ -84,16 +85,16 @@
 
   function desktopCtaMarkup() {
     if (document.getElementById('custom-blend-modal')) {
-      return '<a href="#custom-blends" class="nav-cta-btn open-custom-blend-btn">Request a Blend</a>';
+      return '<a href="#custom-blends" class="nav-cta-btn open-custom-blend-btn">Signature Blends</a>';
     }
-    return '<a href="' + BASE + 'pages/contact.html?topic=custom-blend" class="nav-cta-btn">Request a Blend</a>';
+    return '<a href="' + BASE + 'pages/contact.html?topic=custom-blend" class="nav-cta-btn">Enquiry / Blends</a>';
   }
 
   function mobileCtaMarkup() {
     if (document.getElementById('custom-blend-modal')) {
-      return '<button type="button" class="btn btn-primary open-custom-blend-btn" style="width:100%;">Request a Custom Blend</button>';
+      return '<button type="button" class="btn btn-primary open-custom-blend-btn" style="width:100%;">Signature Blends</button>';
     }
-    return '<a href="' + BASE + 'pages/contact.html?topic=custom-blend" class="btn btn-primary" style="width:100%;text-align:center;">Request a Custom Blend</a>';
+    return '<a href="' + BASE + 'pages/contact.html?topic=custom-blend" class="btn btn-primary" style="width:100%;text-align:center;">Spice &amp; Blend Enquiry</a>';
   }
 
   function injectNavbarStyles() {
@@ -101,35 +102,35 @@
     var style = document.createElement('style');
     style.id = 'amritha-navbar-core-css';
     style.textContent = [
-      '.sticky-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background-color: var(--color-warm-bg, #F8F0E5); border-bottom: 1px solid var(--color-gold-border, rgba(201, 164, 92, 0.35)); transition: background-color 0.3s ease, box-shadow 0.3s ease; }',
-      '.sticky-header.scrolled { background-color: rgba(248, 240, 229, 0.98); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(36, 28, 22, 0.10); }',
-      '[data-theme="dark"] .sticky-header { background-color: var(--color-primary-dark, #051433); border-bottom-color: rgba(201, 164, 92, 0.25); }',
-      '[data-theme="dark"] .sticky-header.scrolled { background-color: rgba(5, 20, 51, 0.98); }',
+      '.sticky-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background-color: var(--color-warm-bg, #FAF3EA); border-bottom: 1px solid var(--color-gold-border, rgba(227, 135, 65, 0.35)); transition: background-color 0.3s ease, box-shadow 0.3s ease; }',
+      '.sticky-header.scrolled { background-color: rgba(250, 243, 234, 0.98); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(44, 21, 13, 0.10); }',
+      '[data-theme="dark"] .sticky-header { background-color: var(--color-primary-dark, #200802); border-bottom-color: rgba(227, 135, 65, 0.28); }',
+      '[data-theme="dark"] .sticky-header.scrolled { background-color: rgba(32, 8, 2, 0.98); }',
       '.navbar { display: flex !important; align-items: center !important; justify-content: space-between !important; height: 80px; position: relative; width: 100%; gap: clamp(16px, 2vw, 32px); }',
       '.nav-brand { display: inline-flex !important; align-items: center !important; gap: 12px !important; text-decoration: none !important; flex-shrink: 0 !important; cursor: pointer; }',
-      '.nav-brand-logo { width: 46px; height: 46px; border-radius: 50%; object-fit: contain; background-color: var(--color-primary, #082052); border: 1.5px solid var(--color-soft-gold, #C9A45C); box-shadow: 0 3px 10px rgba(8, 32, 82, 0.22); flex-shrink: 0; display: block; }',
+      '.nav-brand-logo { width: 46px; height: 46px; border-radius: 50%; object-fit: contain; background-color: var(--color-primary, #691E06); border: 1.5px solid var(--color-soft-gold, #FBBA72); box-shadow: 0 3px 10px rgba(105, 30, 6, 0.22); flex-shrink: 0; display: block; }',
       '.nav-brand-copy { display: flex !important; flex-direction: column !important; line-height: 1.15; }',
-      '.nav-brand-title { font-family: var(--font-serif, "Playfair Display", Georgia, serif); font-size: 1.18rem; font-weight: 700; color: var(--color-primary, #082052); letter-spacing: 0.01em; white-space: nowrap; }',
-      '[data-theme="dark"] .nav-brand-title { color: #F8F0E5 !important; }',
-      '.nav-brand-tagline { font-size: 0.62rem; letter-spacing: 0.13em; color: var(--color-soft-gold, #C9A45C); font-weight: 700; text-transform: uppercase; margin-top: 2px; white-space: nowrap; }',
+      '.nav-brand-title { font-family: var(--font-serif, "Playfair Display", Georgia, serif); font-size: 1.18rem; font-weight: 700; color: var(--color-primary, #691E06); letter-spacing: 0.01em; white-space: nowrap; }',
+      '[data-theme="dark"] .nav-brand-title { color: #FFF7ED !important; }',
+      '.nav-brand-tagline { font-size: 0.62rem; letter-spacing: 0.13em; color: var(--color-accent-rust, #CA5310); font-weight: 700; text-transform: uppercase; margin-top: 2px; white-space: nowrap; }',
       '.nav-menu { display: flex !important; align-items: center !important; justify-content: center !important; gap: clamp(8px, 1.4vw, 20px) !important; list-style: none !important; margin: 0 !important; padding: 0 !important; flex: 1 1 auto; }',
-      '.nav-link { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-dark-text, #241C16); position: relative; padding: 8px 0; white-space: nowrap; text-decoration: none; transition: color 0.2s ease; }',
-      '[data-theme="dark"] .nav-link { color: #F8F0E5 !important; }',
-      '.nav-link:hover, .nav-link.active { color: var(--color-soft-gold, #C9A45C) !important; }',
-      '.nav-link::after { content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--color-soft-gold, #C9A45C); transition: width 0.25s ease; }',
+      '.nav-link { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-dark-text, #2C150D); position: relative; padding: 8px 0; white-space: nowrap; text-decoration: none; transition: color 0.2s ease; }',
+      '[data-theme="dark"] .nav-link { color: #FFF7ED !important; }',
+      '.nav-link:hover, .nav-link.active { color: var(--color-primary-light, #8F250C) !important; }',
+      '.nav-link::after { content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--color-accent-rust, #CA5310); transition: width 0.25s ease; }',
       '.nav-link:hover::after, .nav-link.active::after { width: 100%; }',
       '.nav-actions { display: flex !important; align-items: center !important; gap: 10px !important; flex-shrink: 0 !important; position: static !important; transform: none !important; }',
       '.nav-tools { display: flex !important; align-items: center !important; gap: 8px !important; }',
-      '.tool-btn { width: 40px !important; height: 40px !important; border-radius: 8px !important; border: 1px solid var(--color-gold-border, rgba(201, 164, 92, 0.35)) !important; background: var(--color-warm-surface, #FFF9F0) !important; color: var(--color-primary, #082052) !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; transition: all 0.2s ease; flex-shrink: 0; cursor: pointer; padding: 0 !important; }',
-      '[data-theme="dark"] .tool-btn { background: rgba(255, 255, 255, 0.08) !important; border-color: rgba(201, 164, 92, 0.35) !important; color: #F8F0E5 !important; }',
-      '.tool-btn:hover { background: var(--color-soft-gold, #C9A45C) !important; color: #fff !important; border-color: var(--color-soft-gold, #C9A45C) !important; transform: translateY(-1px); }',
+      '.tool-btn { width: 40px !important; height: 40px !important; border-radius: 8px !important; border: 1px solid var(--color-gold-border, rgba(227, 135, 65, 0.35)) !important; background: var(--color-warm-surface, #FFF8F0) !important; color: var(--color-primary, #691E06) !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; transition: all 0.2s ease; flex-shrink: 0; cursor: pointer; padding: 0 !important; }',
+      '[data-theme="dark"] .tool-btn { background: rgba(255, 255, 255, 0.08) !important; border-color: rgba(227, 135, 65, 0.35) !important; color: #FFF7ED !important; }',
+      '.tool-btn:hover { background: var(--color-soft-gold, #FBBA72) !important; color: #200802 !important; border-color: var(--color-soft-gold, #FBBA72) !important; transform: translateY(-1px); }',
       '.tool-btn svg { width: 19px; height: 19px; }',
-      '.nav-cta-btn { height: 40px !important; padding: 0 18px !important; border-radius: 8px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; font-size: 0.8rem !important; font-weight: 700 !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; background-color: var(--color-primary, #082052) !important; color: var(--color-primary-text, #F8F0E5) !important; border: 1px solid var(--color-primary, #082052) !important; text-decoration: none !important; white-space: nowrap !important; box-shadow: 0 3px 10px rgba(8, 32, 82, 0.16); transition: all 0.2s ease; }',
-      '[data-theme="dark"] .nav-cta-btn { background-color: var(--color-soft-gold, #C9A45C) !important; color: var(--color-primary-dark, #051433) !important; border-color: var(--color-soft-gold, #C9A45C) !important; }',
-      '.nav-cta-btn:hover { background-color: var(--color-primary-light, #0f3073) !important; color: #fff !important; transform: translateY(-1px); }',
-      '[data-theme="dark"] .nav-cta-btn:hover { background-color: #d8b26a !important; }',
-      '.mobile-toggle { display: none !important; background: none; color: var(--color-primary, #082052); font-size: 26px; cursor: pointer; padding: 6px; line-height: 1; border: none; }',
-      '[data-theme="dark"] .mobile-toggle { color: #F8F0E5 !important; }',
+      '.nav-cta-btn { height: 40px !important; padding: 0 18px !important; border-radius: 8px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; font-size: 0.8rem !important; font-weight: 700 !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; background-color: var(--color-primary, #691E06) !important; color: var(--color-primary-text, #FFF7ED) !important; border: 1px solid var(--color-primary, #691E06) !important; text-decoration: none !important; white-space: nowrap !important; box-shadow: 0 3px 10px rgba(105, 30, 6, 0.16); transition: all 0.2s ease; }',
+      '[data-theme="dark"] .nav-cta-btn { background-color: var(--color-soft-gold, #FBBA72) !important; color: var(--color-primary-dark, #200802) !important; border-color: var(--color-soft-gold, #FBBA72) !important; }',
+      '.nav-cta-btn:hover { background-color: var(--color-primary-light, #8F250C) !important; color: #fff !important; transform: translateY(-1px); }',
+      '[data-theme="dark"] .nav-cta-btn:hover { background-color: var(--color-accent-amber, #E38741) !important; }',
+      '.mobile-toggle { display: none !important; background: none; color: var(--color-primary, #691E06); font-size: 26px; cursor: pointer; padding: 6px; line-height: 1; border: none; }',
+      '[data-theme="dark"] .mobile-toggle { color: #FFF7ED !important; }',
       '@media (max-width: 1024px) { .nav-menu { display: none !important; } .nav-cta-btn { display: none !important; } .navbar .nav-tools { display: none !important; } .mobile-toggle { display: inline-flex !important; align-items: center; justify-content: center; } }'
     ].join('\n');
     document.head.appendChild(style);
@@ -150,11 +151,11 @@
       '<header class="sticky-header" id="header">' +
         '<div class="container">' +
           '<nav class="navbar" aria-label="Main Navigation">' +
-            '<a href="' + BASE + 'index.html" class="nav-brand" aria-label="Amritha Spice Mill — home">' +
-              '<img src="' + BASE + 'assets/logo.png" alt="Amritha Spice Mill" class="nav-brand-logo" width="46" height="46">' +
+            '<a href="' + BASE + 'index.html" class="nav-brand" aria-label="Herbs &amp; Spices — home">' +
+              '<img src="' + BASE + 'assets/logo.png" alt="Herbs &amp; Spices" class="nav-brand-logo" width="46" height="46">' +
               '<div class="nav-brand-copy">' +
-                '<span class="nav-brand-title">Amritha Spice Mill</span>' +
-                '<span class="nav-brand-tagline">Traditional Craft &bull; Estd 1948</span>' +
+                '<span class="nav-brand-title">Herbs &amp; Spices</span>' +
+                '<span class="nav-brand-tagline">Spice &amp; Condiments Store</span>' +
               '</div>' +
             '</a>' +
 
@@ -172,8 +173,8 @@
       '<div class="mobile-nav" id="mobile-nav" aria-hidden="true">' +
         '<div class="mobile-nav-header">' +
           '<div style="display:flex;align-items:center;gap:12px;">' +
-            '<img src="' + BASE + 'assets/logo.png" alt="Amritha Spice Mill" style="width:40px;height:40px;border-radius:50%;object-fit:contain;box-shadow:0 2px 8px rgba(0,0,0,0.2);">' +
-            '<div class="brand-title" style="font-family:var(--font-serif);font-size:1.35rem;color:var(--color-primary);font-weight:700;">Amritha Spice Mill</div>' +
+            '<img src="' + BASE + 'assets/logo.png" alt="Herbs &amp; Spices" style="width:40px;height:40px;border-radius:50%;object-fit:contain;box-shadow:0 2px 8px rgba(0,0,0,0.2);">' +
+            '<div class="brand-title" style="font-family:var(--font-serif);font-size:1.35rem;color:var(--color-primary);font-weight:700;">Herbs &amp; Spices</div>' +
           '</div>' +
           '<button type="button" class="mobile-nav-close" style="font-size:28px;background:none;color:var(--color-primary);cursor:pointer;" aria-label="Close navigation menu">&times;</button>' +
         '</div>' +
